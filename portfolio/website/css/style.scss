@@ -1,0 +1,4285 @@
+// @import url(https://fonts.googleapis.com/css?family=M+PLUS+1p);
+@import url("https://fonts.googleapis.com/css?family=M+PLUS+1p:300,400,500,600,700,800,900&subset=japanese");
+@import url("https://fonts.googleapis.com/css?family=Saira:100,200,300,400,500,600,700,800,900");
+@import url("https://fonts.googleapis.com/css?family=Changa:200,300,400,500,600,700,800");
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// ------------ Set up variables here ----------------------------------
+
+$font-stack: "M PLUS 1p", sans-serif;
+$font-bold: "M PLUS 1p:900", sans-serif;
+$font-midashi: "Saira", sans-serif;
+// $font-midashi: 'Changa', sans-serif;
+$black: #333;
+$yellow: #ffdf52;
+$yellow2: #ffd500;
+$green: #38bcb6;
+$navy: #01539b;
+$grey: #f2f2f2;
+
+$fw-light: 400;
+$fw-regular: 500;
+$fw-bold: 700;
+$fw-black: 900;
+
+$iphone5-width: 320px;
+$iphone678-width: 375px;
+$smartphone-width: 600px;
+// $smartphone-width: 375px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+// $desktop-width: 601px;
+
+// @mixin landscapeModeTablet {
+//   @media only screen and (orientation: landscape) {
+//     @content;
+//   }
+// }
+
+// html.sr .load-hidden {
+//   visibility: hidden;
+// }
+
+@mixin vsmallscreen {
+  @media screen and (max-width: #{$iphone5-width}) {
+    @content;
+  }
+}
+@mixin smartphone {
+  @media screen and (max-width: #{$smartphone-width}) {
+    @content;
+  }
+}
+@mixin portraitTablet {
+  @media screen and (min-width: #{$smartphone-width + 1px}) and (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: #{$tablet-width + 1px}) and (max-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: #{$desktop-width + 1px}) {
+    @content;
+  }
+}
+
+@mixin poweredBy {
+  p.poweredby {
+    img {
+      vertical-align: -35%;
+    }
+  }
+}
+
+// ---------------------------------------------------------------------
+
+:root {
+  font-size: 10px;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+body {
+  font: 100% $font-stack;
+  color: $black;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+a,
+img {
+  font-family: $font-stack;
+  font-weight: $fw-light;
+  line-height: 2em;
+}
+
+a {
+  text-decoration: none;
+}
+
+p.center {
+  text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-align: center;
+}
+p,
+a,
+img {
+  font-size: 1.6rem;
+  @include desktop {
+    font-size: 1.6rem;
+  }
+}
+a.logoText {
+  text-decoration: none;
+  img {
+    vertical-align: middle;
+  }
+}
+p {
+  img {
+    vertical-align: middle;
+  }
+}
+
+@mixin iphone678 {
+  @media screen and (min-width: #{$iphone5-width + 1px}) and (max-width: #{$iphone678-width}) {
+    @content;
+  }
+}
+
+// navigation menu -------------------------------------------------//
+//Color Variables
+
+$navheight: 80px;
+// Base Styles
+.navBar {
+  background-color: white;
+  position: fixed;
+  width: 100vw;
+  height: $navheight;
+  box-sizing: border-box;
+  border-bottom: 1px solid #000;
+  top: 0;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  padding-top: 6px;
+}
+.nav-up {
+  top: 0 - $navheight;
+  transition: all 0.3s ease;
+}
+.logo {
+  background: url(../img/logo-black.png) no-repeat;
+  // border-radius: 50px;
+  display: inline-block;
+  height: 57px;
+  // margin: 11px;
+  width: 220px;
+  background-size: contain;
+}
+
+// Content Wrapper
+.wrapper {
+  margin: 0 auto;
+  width: 95%;
+  max-width: 1450px;
+  margin: 0 auto;
+
+  // padding: 0 2%;
+  position: relative;
+  z-index: 100 !important;
+  overflow: hidden;
+}
+
+// Full Navigation, including mobile menu
+
+.lock-scroll {
+  overflow: hidden;
+}
+
+nav {
+  z-index: 100 !important;
+
+  ul {
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    // width: 50%;
+    padding: 0;
+    // padding-right: 1rem;
+    height: 100%;
+    a {
+      color: #000;
+      text-decoration: none;
+      &:hover {
+        color: $yellow;
+      }
+    }
+  }
+
+  li {
+    display: inline-block;
+    &:last-child {
+      padding-right: 2rem;
+    }
+  }
+
+  #menu-toggle {
+    display: none;
+  }
+
+  .label-toggle {
+    display: none;
+  }
+
+  .wrapper {
+    align-items: center;
+    display: flex;
+    padding: 0;
+    // margin: 0;
+    margin: 0 auto;
+    justify-content: space-between;
+    a.contentsPage {
+      color: $yellow;
+      font-weight: $fw-bold;
+      background: white;
+      span {
+        color: #000;
+        font-weight: $fw-light;
+      }
+    }
+    @include desktop {
+      a.menubutton {
+        // background-color: $yellow;
+        font-weight: $fw-light;
+        border-radius: 2px;
+        padding: 1.5rem;
+        // line-height: 1;
+        box-sizing: border-box;
+        // align-self: baseline;
+        display: inline-block;
+        transition: all 0.25s ease-in;
+
+        &.active {
+          background-color: #01539b;
+          box-shadow: 2px 2px 10px 1px #00000025;
+          color: white;
+
+          &:hover {
+            background-color: rgb(4, 96, 177);
+            // box-shadow: 2px 2px 10px 1px #00000025;
+            // color: white;
+          }
+        }
+      }
+      a.contentsPage {
+        background-color: $green;
+        font-weight: $fw-light;
+        border-radius: 2px;
+        box-shadow: 2px 2px 10px 1px #00000025;
+        color: white;
+        padding: 1.5rem;
+        margin: 0 1rem;
+        // line-height: 1;
+        box-sizing: border-box;
+        // align-self: baseline;
+        display: inline-block;
+        // height: calc(100% - 2rem) ;
+        // margin: 1rem;
+        img {
+          width: 33px;
+          height: 15px;
+          // padding-right: 3rem;
+          padding-left: 1rem;
+        }
+        span.PConly {
+          color: white;
+          font-weight: $fw-light;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: #{$desktop-width}) {
+    ul {
+      background-color: white;
+      position: fixed;
+      display: block;
+      height: 0;
+      height: calc(100% - $navheight);
+      overflow: hidden;
+      top: $navheight;
+      // padding-top: $navheight;
+      // height: 100vh;
+      // transform: translateY(-100%);
+      // transition-duration: .3s ease ;
+      list-style-type: none;
+      opacity: 0;
+      text-align: center;
+      transition: all 1s ease;
+      width: 100%;
+      visibility: hidden;
+      margin-bottom: 0;
+      a {
+        color: #000;
+        text-decoration: none;
+        &:hover {
+          color: $yellow;
+          font-weight: $fw-bold;
+        }
+      }
+    }
+
+    li {
+      border-bottom: 2px solid white;
+      height: 0;
+
+      display: block;
+      font-size: 1.5em;
+      padding: 2em 0;
+    }
+    li:last-child {
+      background: url(../img/navftimg.png) no-repeat;
+      background-position: center bottom;
+      position: absolute;
+      display: block;
+      background-size: cover;
+      margin-top: 4rem;
+      bottom: (-2px + $navheight);
+      width: 100%;
+      height: 35vh;
+      padding: 0;
+      @include vsmallscreen {
+        height: 25vh;
+      }
+      // margin: -$navheight;
+      // $menuimg: 30vh ;
+    }
+
+    #menu-toggle:checked ~ ul {
+      opacity: 1;
+      height: 100vh;
+      visibility: visible;
+    }
+
+    .label-toggle {
+      background: linear-gradient(
+        to bottom,
+        white 0%,
+        white 20%,
+        transparent 20%,
+        transparent 40%,
+        white 40%,
+        white 60%,
+        transparent 60%,
+        transparent 80%,
+        white 80%,
+        white 100%
+      ); //Gradient Hamburger
+      cursor: pointer;
+      background: url(../img/nav_icon.svg) no-repeat;
+      background-size: contain;
+      display: block;
+      float: right;
+      $labeltoggleheight: 35px;
+      height: $labeltoggleheight;
+      margin-top: 1em;
+      margin: ($labeltoggleheight / 4 * 3) 2em;
+      // margin: auto 2em;
+      width: 35px;
+    }
+
+    .wrapper {
+      display: block;
+    }
+  }
+}
+
+// Navigation menu start ----------Not in use------------------------------------//
+
+.topnav .icon {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+  .topnav.responsive {
+    position: relative;
+  }
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+
+    // position: relative;
+    z-index: 100;
+    background-color: #fff;
+    height: 100%;
+    // width: 100%;
+  }
+}
+
+// Navigation menu end-------------------------------------------------------------//
+
+/*　テキストセレクトする時の色 Highlight Text Colour */
+::selection {
+  background: $green; /* WebKit/Blink Browsers */
+  color: white;
+}
+::-moz-selection {
+  background: $green; /* Gecko Browsers */
+  color: white;
+}
+.SPonly {
+  @include desktop {
+    display: none;
+  }
+  @include tablet {
+    display: none;
+  }
+}
+.PConly {
+  @include smartphone {
+    display: none;
+  }
+}
+@media (max-width: #{$desktop-width}) {
+  nav .wrapper a.contentsPage .SPonly.navContents {
+    display: inline;
+  }
+  .PConly.navArrow {
+    display: none;
+  }
+}
+
+// scroll down line animation
+$line-height: 60px;
+$line-height-abs: -60px;
+
+.c-scrolldown {
+  width: 1px;
+  height: $line-height;
+  // position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  overflow: hidden;
+  @include desktop {
+    height: $line-height + 30px;
+  }
+  .c-line {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 1) 50%,
+      rgba(255, 255, 255, 0) 50%
+    );
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 1) 50%,
+      rgba(0, 0, 0, 0) 50%
+    );
+    background-position: 0 $line-height-abs;
+    background-size: 100% 200%;
+    animation: scrolldown 2.2s cubic-bezier(0.76, 0, 0.3, 1) forwards infinite;
+  }
+}
+
+@keyframes scrolldown {
+  0% {
+    background-position: 0 $line-height-abs;
+  }
+  75% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 $line-height;
+  }
+}
+
+#nav-bar {
+  background-color: #fff;
+  height: 120px;
+
+  p,
+  img {
+    display: inline;
+  }
+}
+
+#keyvisual {
+  padding-top: 80px;
+  background: url(../img/keyvisual-pc.png) 20% no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: calc(100vh - 170px);
+  position: relative;
+  h1 {
+    font-family: $font-midashi;
+  }
+  h1,
+  h2 {
+    color: #fff;
+    text-align: center;
+  }
+
+  p {
+    color: #fff;
+    text-align: center;
+    &.poweredby {
+      position: absolute;
+      top: 550px;
+      left: 0;
+      right: 0;
+      font-family: $font-midashi;
+      @include portraitTablet {
+        // font-size: 6rem;
+        // line-height: 1.5;
+        top: 750px;
+        font-size: 3rem;
+        line-height: 1.7;
+      }
+      @include smartphone {
+        top: 520px;
+        font-size: 2.4rem;
+        line-height: 1.5;
+      }
+      @include vsmallscreen {
+        top: 400px;
+        font-size: 1.6rem;
+        line-height: 1.5;
+      }
+      @include iphone678 {
+        top: 470px;
+        font-size: 2rem;
+        line-height: 1.5;
+      }
+    }
+  }
+  @include poweredBy;
+  h1 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 300px;
+    font-size: 5rem;
+
+    @include portraitTablet {
+      font-size: 6rem;
+      line-height: 1.3;
+      top: 260px;
+    }
+    @include smartphone {
+      top: 200px;
+    }
+    @include vsmallscreen {
+      font-size: 3.7rem;
+      line-height: 1.3;
+      top: 130px;
+    }
+    @include iphone678 {
+      top: 150px;
+    }
+
+    line-height: 1;
+    font-weight: $fw-regular;
+  }
+  .boldTitle {
+    font-weight: $fw-black;
+  }
+  h2 {
+    font-size: 1.6rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 375px;
+
+    @include portraitTablet {
+      // font-size: 3.6rem;
+      // line-height: 1.5;
+    }
+    @include portraitTablet {
+      // font-size: 6rem;
+      // line-height: 1.5;
+      top: 430px;
+      font-size: 3rem;
+      line-height: 1.7;
+    }
+    @include smartphone {
+      top: 320px;
+      font-size: 2.4rem;
+      line-height: 1.5;
+    }
+    @include vsmallscreen {
+      top: 240px;
+      font-size: 2rem;
+    }
+    @include iphone678 {
+      top: 270px;
+      font-size: 2.4rem;
+      line-height: 1.5;
+    }
+  }
+  .with-message {
+    position: absolute;
+    left: 0;
+    right: 0;
+    // top:75%;
+    font-family: $font-midashi;
+    span {
+      font-weight: $fw-bold;
+    }
+    span.span1 {
+      font-weight: $fw-regular;
+      // color: $black ;
+      // background-color: $yellow;
+      border-bottom: white 4px solid;
+      vertical-align: 20%;
+      // padding: 0.8rem 1rem;
+      // margin-right: 1rem;
+      font-size: 0.6em;
+    }
+
+    @include portraitTablet {
+      // font-size: 6rem;
+      // line-height: 1.5;
+      top: 670px;
+      font-size: 4rem;
+      line-height: 1.7;
+    }
+    @include smartphone {
+      top: 465px;
+      font-size: 3rem;
+      line-height: 1.5;
+    }
+    @include vsmallscreen {
+      top: 350px;
+      font-size: 2.3rem;
+      line-height: 1.5;
+    }
+    @include iphone678 {
+      top: 420px;
+      font-size: 2.8rem;
+      line-height: 1.5;
+    }
+  }
+  @include tablet {
+    background: url(../img/keyvisual-pc.png) no-repeat;
+    background-size: cover;
+    height: 80vh;
+    width: 100%;
+    h1 {
+      font-size: 7rem;
+      padding-top: 0;
+      height: 100%;
+      position: absolute;
+      top: 30%;
+      left: 0;
+      right: 0;
+    }
+    h2 {
+      font-size: 2.5rem;
+      line-height: 1;
+      margin-top: 0;
+    }
+    .with-message {
+      font-weight: $fw-regular;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 800px;
+      font-size: 4rem;
+      line-height: 1.7;
+      span {
+        font-weight: $fw-bold;
+      }
+    }
+    p {
+      color: #fff;
+      text-align: center;
+      &.poweredby {
+        position: absolute;
+        top: 70%;
+        left: 0;
+        right: 0;
+        top: 530px;
+      }
+      @include portraitTablet {
+        // font-size: 6rem;
+        // line-height: 1.5;
+        top: 430px;
+        font-size: 3rem;
+        line-height: 1.7;
+      }
+      @include smartphone {
+        top: 320px;
+        font-size: 2.4rem;
+        line-height: 1.5;
+      }
+      @include vsmallscreen {
+        top: 240px;
+      }
+      @include iphone678 {
+        top: 270px;
+        font-size: 2.4rem;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  @media screen and (min-width: #{$desktop-width + 1px}) {
+    background: url(../img/keyvisual-pc.png) no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 80vh;
+    h1 {
+      font-size: 9rem;
+      padding-top: 0;
+      // height: 100%;
+      position: absolute;
+      // top: 30%;
+      top: 205px;
+      left: 0;
+      right: 0;
+    }
+    h2 {
+      font-size: 3.2rem;
+      line-height: 1;
+      margin-top: 0;
+      top: 360px;
+    }
+
+    .with-message {
+      font-weight: $fw-regular;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 75%;
+      top: 440px;
+      font-size: 4rem;
+      line-height: 1.7;
+      span {
+        font-weight: $fw-bold;
+      }
+    }
+    p {
+      color: #fff;
+      text-align: center;
+      &.poweredby {
+        position: absolute;
+        top: 530px;
+        left: 0;
+        right: 0;
+      }
+    }
+  }
+}
+
+.bg-white {
+  // position: absolute;
+  // top: 1000px;
+  position: relative;
+  background-color: white;
+  width: 100%;
+}
+section {
+  margin: 0;
+  padding: 0;
+}
+
+.bg_black {
+  background: #000;
+  height: 100%;
+  text-align: center;
+  padding: 30px;
+  img,
+  p {
+    color: white;
+    font-size: 1.9rem;
+  }
+  p {
+    margin: 20px auto 0;
+    line-height: 1;
+    small {
+      font-size: 1.1rem;
+    }
+  }
+
+  .share {
+    p {
+      margin: 2rem 0 0;
+    }
+    img {
+      margin: 1rem 0.5rem 3rem;
+    }
+  }
+
+  @include poweredBy;
+}
+
+h2 {
+  color: $green;
+  &::selection {
+    color: white;
+  }
+  font-size: 4.5rem;
+  // font-size: 40px;
+  font-weight: $fw-light;
+  @include desktop {
+    font-size: 95px;
+    font-size: 9.5em;
+  }
+}
+h3 {
+  color: $green;
+  &::selection {
+    color: white;
+  }
+  font-size: 4.5rem;
+  font-size: 40px;
+  font-weight: $fw-light;
+  @include desktop {
+    font-size: 95px;
+  }
+}
+section.about {
+  position: relative;
+  .about-image1 {
+    background: url("../img/about1s.png") 50% 50% no-repeat;
+    background-size: cover;
+    width: 60%;
+    height: 60vh;
+    top: 5vh;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    @include smartphone {
+      display: none;
+    }
+    @include portraitTablet {
+      display: none;
+    }
+    @include tablet {
+      display: none;
+    }
+  }
+  @include tablet {
+    p {
+      width: 80%;
+      margin: 1.6rem auto;
+    }
+  }
+}
+
+.about-image2 {
+  background: url("../img/about2s.png") right top no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: 30vh;
+  transform: translateX(-40%) translateY(10%);
+
+  @include desktop {
+    background: url("../img/about2s.png") left top no-repeat;
+
+    background-size: contain;
+    width: 100%;
+    height: 75vh;
+    // transform: translateX(0);
+    // margin-top: -4%;
+    // margin-bottom: 4%;
+  }
+}
+.about {
+  position: relative;
+  .about-image3 {
+    position: absolute;
+  }
+}
+.about-image3 {
+  background: url("../img/about3.png") 50% 50% no-repeat;
+  background-size: cover;
+  width: 60%;
+  height: 70vh;
+  @include smartphone {
+    display: none;
+  }
+  @include portraitTablet() {
+    display: none;
+  }
+  @include tablet {
+    display: none;
+  }
+  @include desktop {
+    width: 35vw;
+    height: 35vw;
+    position: absolute;
+    left: 0;
+    bottom: 12rem;
+  }
+}
+.about {
+  position: relative;
+  .about-about4 {
+    position: absolute;
+  }
+}
+.about-image4 {
+  background: url("../img/about4.png") right top no-repeat;
+  @include smartphone {
+    background-size: contain;
+    width: 85%;
+    height: 30vh;
+    transform: translateX(30%) translateY(25%);
+  }
+  @include portraitTablet() {
+    background-size: contain;
+    width: 85%;
+    height: 30vh;
+    transform: translateX(30%) translateY(25%);
+  }
+
+  @include tablet() {
+    background-size: contain;
+    width: 85%;
+    height: 30vh;
+    // transform: translateX(30%) translateY(25%);
+  }
+  @include desktop {
+    background-size: cover;
+    width: 50%;
+    height: 40vh;
+    position: absolute;
+    right: 0;
+    bottom: -10rem;
+    z-index: 2;
+  }
+}
+.bg-grey {
+  background-color: $grey;
+  padding: 1.8rem;
+  overflow: hidden;
+  h2 {
+    font-size: 4.5rem;
+    line-height: 1.5;
+  }
+  h3 {
+    // padding-top: 100px;
+    font-size: 4.5rem;
+    line-height: 1.5;
+  }
+}
+.about {
+  @include desktop {
+    padding-top: 3rem;
+  }
+
+  .about-1 {
+    padding: 1.8rem;
+    // overflow:hidden;
+    @include desktop {
+      width: 45%;
+      h2 {
+        font-size: 7.5vh;
+        margin-left: 10vw;
+        text-align: left;
+        margin: 4rem 0 0 4rem;
+        margin-left: 20rem;
+      }
+      p {
+        font-size: 1.8rem;
+        padding: 1rem;
+        // margin-left: 4vw;
+        // margin-right: 4vw;
+        margin: 0 4vw 1vw 4vw;
+        margin-left: 20rem;
+      }
+    }
+  }
+  .bg-grey {
+    margin-top: -100px;
+    background-color: $grey;
+    padding: 1.8rem;
+    overflow: hidden;
+
+    @include desktop {
+      width: 70%;
+
+      float: right;
+      h3 {
+        padding-top: 0;
+        padding-left: 40rem;
+        text-align: left;
+        font-size: 6rem;
+      }
+      p {
+        padding-left: 40rem;
+        width: 55%;
+      }
+      p:last-child {
+        padding-bottom: 10rem;
+      }
+    }
+    h3 {
+      padding-top: 100px;
+    }
+  }
+}
+.about.clearfix {
+  @include desktop {
+    display: block;
+    padding: 10rem;
+  }
+}
+
+.timeline {
+  position: relative;
+  .nextstep-image {
+    padding-top: 1px;
+    background: url("../img/timeline.png") no-repeat 100% top;
+    background-size: cover;
+    position: absolute;
+    right: 0;
+    bottom: 10vh;
+    height: 85vh;
+    width: 75vw;
+    @include desktop {
+      height: 50vw;
+      width: 35vw;
+    }
+    @include portraitTablet {
+      height: 70vw;
+      width: 45vw;
+    }
+    @include tablet {
+      height: 70vw;
+      width: 45vw;
+    }
+  }
+  .wrap {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    z-index: 5;
+  }
+  margin: 0px;
+  padding: 44px 0;
+  padding: 115px 0;
+  background-color: #000;
+  h2,
+  h3.dateHeader {
+    text-align: left;
+  }
+
+  .h-yellow {
+    color: $yellow;
+    padding-top: 115px;
+    padding-top: 0px;
+    margin-bottom: 80px;
+    font-size: 4.5rem;
+    line-height: 1.5;
+    margin-left: 0;
+  }
+  h3 {
+    color: #fff;
+    font-size: 3.5rem;
+    @include vsmallscreen {
+      font-size: 2.4rem;
+    }
+    @include iphone678 {
+      font-size: 2.8rem;
+    }
+  }
+  p {
+    color: #fff;
+  }
+  h3.nextstep {
+    margin-left: 4rem;
+    @include vsmallscreen {
+      font-size: 2.7rem;
+    }
+  }
+  p.nextstep {
+    font-size: 1.6rem;
+    margin-top: 80px;
+    margin-left: 4rem;
+    margin: 6rem 4rem 0 4rem;
+    position: relative;
+    &.time-tag {
+      text-align: center;
+      width: 100%;
+      margin: 0 auto;
+      font-size: 2rem;
+      margin-top: 40px;
+      padding-top: 60px;
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 28%;
+        right: 28%;
+        height: calc(100% + 5px);
+        border-bottom: $yellow2 2px solid;
+        display: inline-block;
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 9px;
+        // right: 0.4rem;
+        left: calc(100% - 70px - 9px);
+        height: 18px;
+        width: 18px;
+        border: $yellow2 2px solid;
+        background-color: black;
+        border-radius: 50%;
+        display: inline-block;
+        z-index: 2;
+      }
+    }
+  }
+  h3.nextstep {
+    text-align: left;
+    font-size: 3.5rem;
+    @include vsmallscreen {
+      font-size: 2.8rem;
+    }
+    line-height: 1.5;
+    margin-top: 8vh;
+  }
+  .nextstep-container {
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    position: relative;
+  }
+}
+.timeline-l {
+  // border-left: $yellow2 1px solid;
+
+  padding: 2rem;
+  margin-left: 4rem;
+  padding-left: 4rem;
+  z-index: 1;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    height: calc(100% - 90px);
+    bottom: 0;
+    left: 0;
+    width: 1px;
+    background-color: #ffd500;
+    z-index: 1;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: 0;
+    left: 0;
+    width: calc(100% - 70px);
+    $line-design-height: 120px;
+    height: $line-design-height;
+    border-top: 1px solid #ffd500;
+    border-right: 1px solid #ffd500;
+    transform: translateY(100%);
+    z-index: 1;
+  }
+  .dateHeader {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 40%;
+      left: -5rem;
+      height: 18px;
+      width: 18px;
+      border: $yellow2 2px solid;
+      background-color: $yellow2;
+      background-color: black;
+      border-radius: 50%;
+      display: inline-block;
+      z-index: 1;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 40%;
+      left: -4.5rem;
+      top: 33px;
+      height: 8px;
+      width: 8px;
+      border: $yellow2 2px solid;
+      background-color: $yellow2;
+      border-radius: 50%;
+      display: inline-block;
+      z-index: 1;
+      @include iphone678 {
+        top: 28px;
+      }
+    }
+  }
+  h2,
+  p {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0.6rem;
+      left: -3rem;
+      height: 18px;
+      width: 18px;
+      left: -4.7rem;
+      height: 10px;
+      width: 10px;
+      border: $yellow2 2px solid;
+      background-color: black;
+      background-color: $yellow2;
+      border-radius: 50%;
+      display: inline-block;
+      z-index: 1;
+    }
+  }
+  h2::before {
+    top: 2.6rem;
+  }
+}
+.highlight {
+  // background: $yellow;
+  background-image: linear-gradient(transparent 50%, $yellow2 50%);
+
+  // width: 80%;
+  // margin: 0 auto;
+}
+.creativework {
+  position: relative;
+  overflow: hidden;
+  .creativework-image {
+    overflow: hidden;
+
+    @include smartphone {
+      background: url("../img/sp/creativeworksp.png") no-repeat 50%;
+      background-size: cover;
+      height: 40vh;
+      width: 55vw;
+      position: absolute;
+      top: 60vh;
+      right: 0;
+      @media (min-width: 405px) {
+        top: 45vh;
+      }
+      @media (min-width: 408px) {
+        top: 45vh;
+      }
+      @media (min-width: 500px) {
+        top: 35vh;
+      }
+
+      &.PConly {
+        display: none;
+      }
+    }
+    @include vsmallscreen() {
+      background: url("../img/sp/creativeworksp.png") no-repeat 50%;
+      background-size: cover;
+      height: 40vh;
+      width: 55vw;
+      position: absolute;
+      top: 85vh;
+      right: 0;
+      &.PConly {
+        display: none;
+      }
+    }
+    @include portraitTablet {
+      background: url("../img/creativework.png") no-repeat 50%;
+      background-size: cover;
+      height: 40vh;
+      width: 55vw;
+      position: absolute;
+      top: 35vh;
+      right: 0;
+      &.PConly {
+        display: none;
+      }
+    }
+    @include tablet {
+      background: url("../img/creativework.png") no-repeat 50%;
+      background-size: cover;
+      // height: 40vh;
+      // width: 55vw;
+      // position: absolute;
+      // top: 65vh;
+      // right: 0;
+      // &.PConly {
+      //   display: none;
+      //  }
+      width: 45vw;
+      height: 50vw;
+      left: 0;
+      float: left;
+      &.SPonly {
+        display: none;
+      }
+    }
+    @include desktop {
+      background: url("../img/creativework.png") no-repeat 50%;
+      width: 45vw;
+      height: 50vw;
+      // position: absolute;
+      left: 0;
+      float: left;
+      &.SPonly {
+        display: none;
+      }
+    }
+  }
+  @include desktop {
+    .create-container {
+      width: 50%;
+      float: right;
+      h2 {
+        text-align: left;
+      }
+
+      p {
+        text-align: left;
+        max-width: 600px;
+      }
+    }
+  }
+
+  .bg-grey {
+    padding-bottom: 25vh;
+    margin-bottom: 22vh;
+    @include desktop {
+      padding: 0;
+      margin: 0;
+      position: relative;
+      .create-container {
+        position: absolute;
+        margin-left: 50%;
+        bottom: 25%;
+        top: 25%;
+
+        h2 {
+          font-size: 6rem;
+          margin-bottom: 0;
+          line-height: 1.5;
+          padding-right: 2rem;
+        }
+        p {
+          padding-right: 2rem;
+        }
+      }
+    }
+    @include tablet {
+      padding: 0;
+      margin: 0;
+      position: relative;
+      .create-container {
+        position: absolute;
+        margin-left: 50%;
+        bottom: 25%;
+        top: 15%;
+
+        h2 {
+          font-size: 4rem;
+          margin-bottom: 0;
+          line-height: 1.5;
+          padding-right: 2rem;
+          margin-top: 1rem;
+        }
+        p {
+          padding-right: 2rem;
+          font-size: 1.6rem;
+        }
+      }
+    }
+  }
+  @include tablet {
+    .create-container {
+      width: 80%;
+      margin: 1.6rem auto;
+    }
+  }
+  h3 {
+    font-size: 2.6rem;
+    text-align: right;
+  }
+  p {
+    text-align: left;
+  }
+
+  .bg-text {
+    color: $grey;
+    font-size: 3.6rem;
+    text-align: left;
+    margin: 0 auto;
+    width: 70%;
+
+    @include desktop {
+      font-size: 6rem;
+
+      margin-left: 6rem;
+      margin-bottom: 0rem;
+    }
+    @include tablet {
+      font-size: 4rem;
+    }
+  }
+  .bg-text2 {
+    padding: 4rem;
+    margin: 0 auto;
+    max-width: 700px;
+    font-size: 2.5rem;
+    @include smartphone {
+      font-size: 2rem;
+      padding: 1.8rem;
+    }
+  }
+  h3 {
+    text-align: left;
+  }
+  @include tablet {
+    .create-container {
+      width: 50%;
+      float: right;
+      padding-bottom: 0;
+      margin-bottom: 0;
+      h2 {
+        text-align: left;
+      }
+
+      p {
+        text-align: left;
+        // max-width: 600px;
+      }
+    }
+  }
+  .creative-2 {
+    @include desktop {
+      width: 65%;
+      p {
+        text-align: center;
+        font-size: 2.5rem;
+        padding-left: 2rem;
+        margin: 2rem auto;
+        margin-right: 0;
+        max-width: 620px;
+      }
+      h3 {
+        text-align: right;
+        // font-size: 5.5rem;
+      }
+    }
+
+    h3 {
+      text-align: right;
+      padding: 2rem;
+      font-size: 3.5rem;
+      @include smartphone {
+        font-size: 2.8rem;
+      }
+    }
+
+    div.bg-grey {
+      margin-bottom: 4rem;
+      padding: 1rem;
+
+      @include smartphone {
+        background: none;
+        background-image: linear-gradient(to right, transparent 50%, $grey 50%);
+        padding: 12rem 0;
+      }
+      @include tablet {
+        p {
+          text-align: center;
+          font-size: 2rem;
+          padding-left: 2rem;
+          margin: 2rem auto;
+        }
+      }
+    }
+  }
+}
+.bg-work {
+  background: url("../img/workplace.png") 50% 50% no-repeat;
+  background-size: cover;
+  height: 40vw;
+  width: 60vw;
+  margin-left: 40vw;
+  position: relative;
+  @media screen and (max-width: 600px) {
+    background: url("../img/sp/workplace-sp.png") 50% 50% no-repeat;
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+
+    right: 0;
+    &.bg-work-sp {
+      width: 80vw;
+      margin-left: 20vw;
+      height: 40vw;
+    }
+  }
+}
+.creative-2 {
+  @include vsmallscreen {
+    h3 {
+      font-size: 2.7rem;
+    }
+  }
+
+  p {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  position: relative;
+  & ~ .bg-work.bg-work-sp {
+    @include smartphone {
+      position: absolute;
+      bottom: 44vh;
+
+      &.aos-animate {
+        transform: translateX(80px);
+      }
+      @media (max-width: #{$iphone678-width}) {
+        bottom: 45vh;
+      }
+      @include vsmallscreen {
+        bottom: 70vh;
+      }
+    }
+  }
+}
+
+.bg-black-work {
+  @include desktop {
+    position: absolute;
+    background: black;
+    height: 30vh;
+    width: 80vw;
+    bottom: 40vh;
+    z-index: -1;
+  }
+}
+.strengths {
+  overflow: hidden;
+  position: relative;
+  h4.work-tagline {
+    font-size: 4rem;
+    color: #ecebeb;
+    // opacity: 0.5;
+    position: absolute;
+    margin: 0;
+    // bottom: 10rem;
+    // bottom: 10vh;
+    right: 10%;
+    bottom: -10vh;
+    text-align: left;
+    line-height: 1.5;
+  }
+  @include desktop {
+    h4.work-tagline {
+      font-size: 8rem;
+      opacity: 1;
+      color: #ecebeb;
+      position: absolute;
+      margin: 0;
+      bottom: 10rem;
+      bottom: 10vh;
+      left: 50%;
+      text-align: left;
+      line-height: 1.5;
+    }
+  }
+
+  .bg-grey2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+
+    // margin-top: 20vh;
+    padding: 5rem 2rem 60vh 2rem;
+    @include desktop {
+      padding-right: 175px;
+    }
+    width: 60%;
+    min-width: 800px;
+    // margin-left: 40%;
+    float: right;
+
+    background-color: $grey;
+    // @include smartphone {
+    //   display: none;
+    // }
+    // @include portraitTablet {
+    //   display: none;
+    // }
+    @media screen and (max-width: #{$desktop-width}) {
+      display: none;
+    }
+  }
+  .right-container {
+    position: relative;
+    .str-image {
+      position: absolute;
+      background: url("../img/rightjob.png");
+      background-size: cover;
+      // width: 700px;
+      // height: 430px;
+      width: 45vw;
+      height: 30vw;
+
+      top: 260px;
+      left: 0;
+
+      @include smartphone {
+        display: none;
+      }
+      @include portraitTablet {
+        display: none;
+      }
+    }
+  }
+  .bg-black {
+    // position: absolute;
+    margin: 0;
+    top: 0;
+    width: 60%;
+    background-color: #000;
+    transform: translateX(50px);
+    @include smartphone {
+      width: 100%;
+      h2 {
+        font-size: 2.8rem;
+      }
+    }
+    @include vsmallscreen {
+      width: 100%;
+      h2 {
+        font-size: 2.4rem;
+      }
+    }
+    h2 {
+      font-size: 3.2rem;
+      color: white;
+      text-align: right;
+      padding: 25px 35px 25px 20px;
+      @include portraitTablet {
+        font-size: 2.8rem;
+      }
+      @include smartphone() {
+        font-size: 2.6rem;
+      }
+    }
+    @include desktop {
+      width: 30%;
+      margin: 0 auto;
+      position: relative;
+      top: 5rem;
+      z-index: 1;
+      h2 {
+        padding: 1rem 0;
+        display: block;
+        // margin: 0 auto;
+        text-align: center;
+        width: 100%;
+        text-align: left;
+        margin-left: 2rem;
+      }
+    }
+  }
+  a {
+    box-sizing: border-box;
+    p {
+      margin: 0.5rem 0 0;
+    }
+    h3 {
+      font-size: 4rem;
+      text-align: left;
+      line-height: 1.5;
+      margin: 0;
+      color: white;
+    }
+    .str-buttons {
+      padding: 1rem 3rem;
+      margin: 0;
+      color: white;
+      background: $green;
+
+      p {
+        font-size: 1.3rem;
+      }
+      .hDivide {
+        content: attr(data-content);
+        border-top: 0.1rem solid white;
+        width: 55%;
+        margin: 0;
+        // transform: translateY(-2rem);
+        clear: both;
+        z-index: 5;
+        position: relative;
+      }
+    }
+  }
+}
+
+.right1 {
+  overflow: hidden;
+  // margin-left: auto;
+  // width: 60%;
+
+  @include desktop {
+    margin: 0;
+    padding: 0;
+    &.bg-grey {
+      background: transparent;
+      position: relative;
+      top: -15vh;
+      // height: calc(100% - 50vh);
+      .right1-head {
+        position: relative;
+        margin: 0;
+        // padding:1.8rem;
+        &::before {
+          background: $grey;
+          width: 60%;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+        }
+        &::after {
+          content: "";
+          background: url("../img/jobtypes-bg.png") no-repeat;
+          background-size: cover;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          // top: 0 ;
+          bottom: -40vh;
+        }
+        // padding-top:30vh;
+      }
+    }
+  }
+  .right1-head {
+    margin: 1.8rem;
+    h2 {
+      font-size: 8rem;
+      padding: 0;
+      margin: 0;
+      line-height: 1;
+      text-align: right;
+      padding-right: 95px;
+    }
+    h3 {
+      text-align: right;
+      font-weight: $fw-regular;
+    }
+    h4 {
+      font-size: 3.1rem;
+      color: #000;
+      text-align: left;
+      @include vsmallscreen {
+        font-size: 2.6rem;
+      }
+    }
+    @include desktop {
+      h2 {
+        display: inline;
+        text-align: right;
+        float: right;
+        margin-right: 10%;
+      }
+      h3 {
+        display: inline;
+        text-align: right;
+        float: right;
+        margin-right: 2rem;
+        margin-top: 1rem;
+        // margin-right: 12%;
+      }
+      h4 {
+        font-size: 4rem;
+        line-height: 1.5;
+        margin-left: 50%;
+        // .right1 .right1-head h4 {
+        @include desktop {
+          clear: both;
+          margin-left: 58%;
+        }
+      }
+      // h4.work-tagline {
+      //     font-size: 8rem;
+      //     color: #ECEBEB;
+      //     position:absolute;
+      //     margin:0;
+      //     top: 0;
+      //     left:50%;
+      // }
+    }
+  }
+  @include desktop {
+    &::after {
+      content: "";
+      background: url("../img/jobtypes-bg.png");
+    }
+  }
+  .jobtype-contain {
+    display: grid;
+    position: relative;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 6rem;
+
+    width: 90%;
+    margin: 0 auto;
+    @include desktop {
+      max-width: 1000px;
+    }
+
+    margin: 0 auto;
+    @media screen and (max-width: #{$smartphone-width}) {
+      grid-template-columns: repeat(auto-fill, minmax(80%, 1fr));
+    }
+    @include portraitTablet {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+    @include tablet {
+      max-width: 1000px;
+    }
+    @include vsmallscreen {
+      grid-template-columns: repeat(auto-fill, minmax(80%, 1fr));
+    }
+  }
+  .jobtypes {
+    @include desktop {
+    }
+    position: relative;
+    margin-bottom: 25%;
+    @media screen and (max-width: 768px) {
+      margin-bottom: 4rem;
+    }
+    div {
+      box-sizing: border-box;
+      text-align: center;
+      overflow: hidden;
+      width: 95%;
+      h3 {
+        color: #b2b2b2;
+        font-size: 5.5rem;
+        display: inline-block;
+        font-weight: $fw-regular;
+        margin-bottom: 0;
+        margin-top: 0;
+      }
+      h4 {
+        color: #000;
+        font-size: 2.6rem;
+        line-height: 1.5;
+        background-color: $yellow;
+        // background-image: linear-gradient(transparent 50%, $yellow 50%);
+
+        display: inline-block;
+        padding: 0 10px;
+      }
+      @media screen and (max-width: #{$desktop-width}) {
+        h3 {
+          font-size: 4rem;
+        }
+        h4 {
+          font-size: 2.2rem;
+        }
+      }
+      @media screen and (max-width: 903px) {
+        h3 {
+          font-size: 3.9rem;
+        }
+        h4 {
+          font-size: 2rem;
+        }
+      }
+      @media screen and (max-width: 859px) {
+        h3 {
+          font-size: 3.8rem;
+          padding: 0rem;
+        }
+        h4 {
+          font-size: 1.8rem;
+          padding: 0rem;
+        }
+      }
+      @media screen and (max-width: 768px) {
+        h3 {
+          font-size: 5rem;
+        }
+        h4 {
+          font-size: 2.5rem;
+        }
+      }
+      @media screen and (max-width: #{$smartphone-width}) {
+        h3 {
+          font-size: 5rem;
+        }
+        h4 {
+          font-size: 2.5rem;
+        }
+      }
+    }
+    .button {
+      // transform:  translateY( -35px )
+      //             translateX( 30px );
+      position: absolute;
+      bottom: -3.6rem;
+      margin-left: -80px;
+      left: 50%;
+      max-width: 200px;
+      width: 80%;
+      // @media screen and (max-width: 903px) {
+      //   width: 180px;
+      // }
+    }
+    img {
+      // width: 260px;
+      width: 100%;
+      max-width: 260px;
+      // height: 254px;
+      margin: 0 auto;
+      display: block;
+      transition: transform 0.2s;
+      &:hover {
+        transform: scale(1.05);
+        opacity: 0.9;
+      }
+    }
+  }
+}
+
+.right2 {
+  position: relative;
+  &:after {
+    content: "";
+    background: url(../img/rightplace.png) 50% no-repeat;
+    background-size: cover;
+    opacity: 0.07;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: -1;
+    @include desktop {
+      background: url(../img/rightplace.png) middle center no-repeat;
+      opacity: 1;
+      // background: cover;
+      width: 50vw;
+      height: 40vh;
+      min-height: 30vw;
+      position: absolute;
+      right: 0;
+      // bottom: 25%;
+      top: 15%;
+    }
+  }
+}
+
+.right2-head,
+.right3-head {
+  margin: 1.8rem;
+  margin-top: 0;
+  padding-top: 15%;
+
+  @media (max-width: #{$desktop-width}) {
+    width: 60%;
+    margin: 0 auto;
+  }
+  @media (max-width: #{$smartphone-width}) {
+    width: 85%;
+    margin: 0 auto;
+  }
+  h4.work-tagline {
+    font-size: 8rem;
+    opacity: 1;
+    color: #ecebeb;
+    // position:absolute;
+    margin: 0;
+    bottom: 10rem;
+    bottom: 10vh;
+    left: 50%;
+    text-align: left;
+    line-height: 1.5;
+  }
+  // @include tablet {
+
+  // }
+  @include desktop {
+    // padding-top: 0;
+    // margin-right: 20%;
+    h3 {
+      display: inline;
+      text-align: right;
+      float: right;
+      margin-right: 2rem;
+      // margin-top: 6rem;
+      margin-top: 1rem;
+      font-size: 4.5rem;
+      line-height: 1.5;
+    }
+    h2 {
+      display: inline;
+      text-align: right;
+      float: right;
+    }
+    p {
+      // margin-left:  4rem;
+      margin-left: 15vw;
+    }
+    h4.work-tagline {
+      font-size: 8rem;
+      color: #ecebeb;
+      position: absolute;
+      margin: 0;
+      left: 4rem;
+      bottom: 1rem;
+      z-index: 50;
+      text-align: left;
+      line-height: 1.5;
+      // &.PConly {
+      //   @media (max-width: #{$desktop-width}) {
+      //     display: none;
+      //   }
+      // }
+    }
+  }
+  // margin: 1.8rem;
+  overflow: hidden;
+  h2 {
+    font-size: 8rem;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+  }
+  h3 {
+    text-align: right;
+    font-weight: $fw-regular;
+  }
+  h4 {
+    font-size: 3.1rem;
+    color: #000;
+    text-align: left;
+    line-height: 1.5;
+    margin: 0 auto;
+    @include desktop {
+      margin-left: 4rem;
+      margin-left: 15vw;
+    }
+  }
+  img {
+    width: 100%;
+    &.PConly {
+      margin-top: 30px;
+      @include tablet {
+        display: none;
+      }
+      @include portraitTablet {
+        display: none;
+      }
+    }
+  }
+  h4.bg-text {
+    color: $grey;
+    font-size: 3.6rem;
+    text-align: left;
+
+    position: absolute;
+    right: 0;
+    margin-left: 50%;
+    @include smartphone {
+      display: none;
+    }
+  }
+}
+
+.skill-tagline {
+  margin-top: 7vh;
+  font-size: 1.6rem;
+  text-align: left;
+  margin-left: 50%;
+  font-weight: $fw-bold;
+  @include vsmallscreen {
+    font-size: 1.4rem;
+    margin-top: 9vh;
+  }
+  @include desktop {
+    font-size: 3rem;
+    position: absolute;
+    bottom: 70px;
+    left: 80px;
+    z-index: 4;
+  }
+}
+.skill-container {
+  // position: relative;
+  background: url(../img/rightskills.png) 40% no-repeat;
+  background-size: auto 100%;
+  @include desktop {
+    position: absolute;
+    background: none;
+    width: 100%;
+    top: 160px;
+    // top: 0;
+    // background-size: auto 100%;
+  }
+  // position: relative;
+
+  .skillset {
+    background: #000;
+    width: 50%;
+    margin: 0 50%;
+    // opacity: 0.8 !important;
+    transition: 0.3s ease-in-out;
+    &:hover,
+    &:active {
+      opacity: 1;
+    }
+    // transform: translateY(50px);
+    &.aos-animate {
+      transform: translateY(50px);
+    }
+    ul {
+      list-style: none;
+      padding: 20px 0 60px;
+      overflow: hidden;
+      @include desktop {
+        width: 50%;
+        padding-top: 20px;
+        padding-bottom: 30pxvh;
+        margin-left: 10%;
+      }
+    }
+    h5 {
+      color: $yellow;
+      font-size: 3rem;
+      font-weight: $fw-light;
+      margin: 1.8rem;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+      opacity: 0.9;
+    }
+
+    p {
+      color: $yellow2;
+      opacity: 0.7;
+      font-size: 1.6rem;
+      margin: 0 1.8rem;
+    }
+
+    .hDivide {
+      content: attr(data-content);
+      border-top: 0.1rem solid $yellow;
+      width: 90%;
+      margin: 0 2.5rem;
+      // transform: translateY(-2rem);
+      clear: both;
+      z-index: 5;
+      position: relative;
+    }
+  }
+}
+.right1-head,
+.right2-head,
+.right3-head {
+  h2 {
+    position: relative;
+    text-align: right;
+    padding-right: 95px;
+    &::after {
+      content: "";
+      background: url("../img/numheader-arrow.png") no-repeat;
+      // background-size: 100% 100%;
+      top: 50%;
+      // right: 8%;
+      width: 64px;
+      height: 30px;
+      position: absolute;
+    }
+  }
+  @include vsmallscreen {
+    h4 {
+      font-size: 2.7rem;
+    }
+  }
+}
+.lasttagline {
+  @include smartphone {
+    width: 90vw;
+    height: 90vw;
+    background: #f2f2f2;
+    margin: 0 auto;
+    margin-bottom: 6rem;
+
+    p {
+      line-height: 90vw;
+    }
+  }
+  p {
+    font-size: 8vw;
+    text-align: center;
+    span {
+      color: $green;
+      &::selection {
+        color: white;
+      }
+    }
+  }
+  p {
+    font-size: 3rem;
+    @include desktop {
+      margin-left: 50%;
+    }
+    @include vsmallscreen {
+      font-size: 2.5rem;
+    }
+  }
+}
+@include desktop {
+  div.right2-head {
+    padding-bottom: 10vh;
+    padding-top: 0;
+
+    margin-right: 55%;
+    &::before {
+      content: "";
+      background: $grey;
+      top: -10vh;
+      bottom: -10vh;
+      left: 0;
+      right: 0;
+      position: absolute;
+      z-index: -2;
+    }
+  }
+  .right3 {
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    position: relative;
+    @include desktop {
+      padding-top: 20vh;
+      p.skill-tagline {
+        font-size: 3rem;
+      }
+    }
+  }
+  div.right3-head {
+    margin-left: 0;
+    padding-top: 0;
+    margin-right: 55%;
+    @include desktop {
+      margin-right: 50%;
+      position: relative;
+      .bg-text {
+        position: absolute;
+        right: -100%;
+        top: 28vh;
+      }
+      p {
+        margin-right: 10%;
+      }
+      h2 {
+        margin-right: 10%;
+      }
+    }
+    position: relative;
+    &::before {
+      content: "";
+      background: $grey;
+      top: -10vh;
+      bottom: -10vh;
+      left: 0;
+      right: 0;
+      position: absolute;
+      z-index: -2;
+      @include desktop {
+        background: none;
+      }
+    }
+  }
+}
+
+.tagline {
+  color: $green;
+  &::selection {
+    color: white;
+  }
+  font-size: 25px;
+  float: right;
+  text-align: right;
+}
+.tagline:before {
+  display: inline-block;
+  // content: "";
+  content: attr(data-content);
+  border-top: 0.1rem solid $green;
+  width: 12rem;
+  max-width: 30%;
+  margin: 0 1rem;
+  transform: translateY(-1rem);
+}
+.clearfix {
+  clear: both;
+}
+
+.under-const {
+  margin: 15% 0;
+  margin: 0;
+
+  h2 {
+    font-size: 2rem;
+    color: #000;
+    margin-top: -40px;
+    padding-bottom: 2rem;
+  }
+  img {
+    width: 100%;
+  }
+  @include desktop {
+    // background: url(../img/constructionbg.png) 50%;
+    // background-size: cover;
+    // height: 100%;
+    margin-bottom: -1rem;
+    h2 {
+      display: none;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  @media screen and (min-width: #{$smartphone-width + 1} ) and (max-width: #{$desktop-width }) {
+    h2 {
+      display: none;
+    }
+    img.SPonly {
+      // margin: 0 auto;
+      // width: 100%;
+      display: none;
+    }
+  }
+  @media screen and (max-width: #{$smartphone-width }) {
+    background: url(../img/sp/constructionbg-sp.png) 50%;
+    background-size: cover;
+    height: 100%;
+    img.SPonly {
+      margin: 0 auto;
+      width: 100%;
+    }
+  }
+}
+.contentlinks {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 4rem;
+
+  h2 {
+    font-size: 3.1rem;
+    color: black;
+    font-weight: $fw-regular;
+    position: relative;
+    display: inline;
+    line-height: 4;
+    @include smartphone {
+      font-size: 2.8rem;
+    }
+    @include iphone678 {
+      font-size: 2.3rem;
+    }
+    @include vsmallscreen {
+      font-size: 1.9rem;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-bottom: 2.5rem solid $green;
+      opacity: 0.7;
+      // background: linear-gradient(to bottom,#00000000,black) ;
+      z-index: -1;
+    }
+  }
+
+  @include desktop {
+    h2 {
+      text-align: left;
+      font-size: 4rem;
+      //  margin-left: 15%;
+    }
+  }
+  .content-subh {
+    font-size: 1.6rem;
+    width: 100%;
+    margin: 0 50%;
+    position: relative;
+    @include desktop {
+      padding-left: 150px;
+      margin-left: 70%;
+      font-size: 2.6rem;
+    }
+  }
+  .content-subh::after {
+    content: "";
+    position: absolute;
+    bottom: 0rem;
+    right: 0;
+    // width: 55%;
+    width: 100%;
+    // top: 15rem;
+    border-bottom: 2px solid $green;
+    z-index: -1;
+    @include vsmallscreen {
+      // top: 13rem;
+    }
+    @include desktop {
+      width: 40%;
+      left: 0;
+    }
+  }
+
+  .banner {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 0.7fr 0.3fr;
+    grid-gap: 4rem;
+    // position: relative;
+    @include desktop {
+      margin: 4rem auto;
+    }
+
+    width: 70vw;
+    height: auto;
+    @media screen and (max-width: #{$desktop-width }) {
+      grid-gap: 0;
+      display: block;
+      width: 100%;
+      min-width: 200px;
+      margin: 0 auto;
+
+      // margin: 0 auto;
+      img,
+      a.contentpagelinks {
+        position: relative;
+        margin: 0 auto;
+      }
+    }
+
+    .smallbanner {
+      @include desktop {
+        display: none;
+      }
+      @include tablet() {
+        display: none;
+      }
+      // width: 100%;
+      width: 70%;
+      margin: 3rem 3rem;
+      margin-bottom: -1rem;
+      // margin: 0 auto;
+      z-index: 1;
+      margin: 0 auto;
+
+      margin-top: 4rem;
+
+      margin-left: 10%;
+      @include portraitTablet {
+        display: none;
+      }
+    }
+    .largebanner {
+      width: 100%;
+      min-width: 40vw;
+      max-width: 700px;
+      @include smartphone {
+        display: none;
+      }
+      @include portraitTablet {
+        // display: none;
+        margin: 0 auto;
+        width: 50vw;
+        // min-width: 40vw;
+        margin-top: 2rem;
+        margin-left: 15%;
+        max-width: 1000px;
+      }
+      @include tablet {
+        margin: 0 auto;
+        width: 50vw;
+        // min-width: 40vw;
+        margin-top: 2rem;
+        margin-left: 15%;
+        max-width: 1000px;
+      }
+    }
+
+    a.contentpagelinks {
+      // box-sizing: border-box;
+      display: inline-block;
+      width: 30%;
+      padding: 1rem 3rem;
+      margin: 0;
+      color: white;
+      background: $green;
+      position: relative;
+      margin-bottom: 4rem;
+      margin: 0 auto;
+      @include desktop {
+        min-width: 300px;
+      }
+      @include smartphone {
+        // width: 300px;
+        width: 55%;
+        float: right;
+        margin-top: -1.5rem;
+      }
+      p {
+        margin: 0.5rem 0 0;
+        font-size: 1.8rem;
+        @include smartphone {
+          font-size: 1.4rem;
+        }
+        @include vsmallscreen {
+          font-size: 1.4rem;
+        }
+        @include portraitTablet() {
+          font-size: 1.4rem;
+          margin-top: 1.6rem;
+        }
+      }
+      p.btn-righttxt {
+        position: absolute;
+        font-size: 1.6rem;
+        right: 2rem;
+        top: 0;
+        @include desktop {
+          &::after {
+            content: attr(data-content);
+            border-bottom: 1px solid white;
+            width: 130%;
+            margin: 0;
+            right: -2rem;
+            top: 100%;
+            clear: both;
+            z-index: 5;
+            position: absolute;
+          }
+        }
+        @include smartphone {
+          font-size: 1rem;
+        }
+        @include portraitTablet() {
+          top: -1.4rem;
+          font-size: 1.2rem;
+        }
+      }
+
+      height: 100%;
+
+      @include desktop {
+        top: 25%;
+        bottom: 25%;
+        right: 0;
+
+        height: 50%;
+        &::after {
+          content: attr(data-content);
+          border-bottom: 3px solid $green;
+          width: 20rem;
+          margin: 0;
+          left: -19rem;
+          top: 50%;
+          bottom: 50%;
+          z-index: 5;
+          position: absolute;
+          transition: transform 0.2s;
+        }
+      }
+      @include tablet {
+        min-width: 300px;
+        display: block;
+        margin-top: -2rem;
+        z-index: -1;
+        margin-bottom: 4rem;
+        margin-right: 20%;
+      }
+      @include portraitTablet() {
+        display: block;
+        margin-top: -2rem;
+        z-index: -1;
+        margin-bottom: 4rem;
+        margin-right: 15%;
+      }
+      @include vsmallscreen {
+        width: 55%;
+        display: block;
+        float: right;
+        margin-top: -1rem;
+        margin-right: 2rem;
+        min-width: 0;
+      }
+    }
+    @include tablet {
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+    }
+  }
+}
+.mailmaga {
+  & > div {
+    max-width: 800px;
+    margin: 0 auto;
+    // width: 80%;
+  }
+  background: url(../img/mailmaga-bg.png) no-repeat;
+  background-size: cover;
+  padding: 30px auto;
+  margin-top: -2rem;
+  padding-bottom: 2rem;
+  h2 {
+    color: $yellow;
+    font-size: 2.5rem;
+    font-weight: $fw-regular;
+    padding-top: 30px;
+    margin: 0 auto;
+    width: 70%;
+  }
+  p {
+    color: white;
+    margin: 1.8rem;
+    max-width: 800px;
+    width: 90%;
+    margin: 3rem auto;
+  }
+  form {
+    font-size: 1.6rem;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 30px;
+
+    input {
+      // display: none;
+      background: white;
+      border-radius: 50px;
+      padding: 1.5rem;
+      border: none;
+      width: 80%;
+      max-width: 600px;
+      margin-right: 2%;
+      text-align: center;
+
+      @media screen and (max-width: #{$desktop-width}) {
+        display: block;
+        width: 80%;
+        margin: 0 auto;
+        // border-radius: 2px;
+      }
+    }
+    #submit {
+      background: $yellow;
+      text-align: center;
+      padding: 1.5rem;
+      border-radius: 50px;
+      display: inline-block;
+      border: none;
+      width: 86px;
+      @media screen and (max-width: #{$desktop-width}) {
+        display: block;
+        width: 86px;
+        margin: 3rem auto 1.5rem;
+        padding: 1.5rem;
+        border-radius: 10px;
+      }
+      &:hover {
+        box-shadow: 3px 3px 3px 0 #00000040;
+        background: lighten($yellow, 10%);
+        transform: translateX(-2px) translateY(-2px);
+      }
+      @include desktop {
+        &:active {
+          background: $yellow;
+          box-shadow: inset 0px 0px 20px darken($yellow, 30%);
+          transform: translateX(1px) translateY(1px);
+        }
+      }
+    }
+  }
+}
+
+.bg-white {
+  position: relative;
+}
+div#keyvisual {
+  position: relative;
+}
+#sitePoints {
+  display: inline-block;
+  position: absolute;
+  // min-width:
+  // width
+  margin: 0 auto;
+  max-width: 75%;
+  left: 0;
+  right: 0;
+  bottom: 2rem;
+  display: grid;
+  grid-template-columns: 2px 1fr 2px 1fr 2px 1fr 2px;
+  @include tablet {
+    max-width: 85%;
+    br {
+      display: none;
+    }
+    p {
+      font-size: 1.5rem;
+    }
+  }
+  @include portraitTablet {
+    display: none;
+  }
+  @include smartphone {
+    display: none;
+  }
+  .verticalDivider {
+    border-left: 1px solid #edf3f6;
+    // border-top: 0.1rem solid;
+    height: 100px;
+    transform: translate(50%);
+  }
+  .point-block {
+    box-sizing: border-box;
+    // border: 1px solid red;
+    z-index: 200;
+    display: inline-block;
+    margin: 0 auto;
+    min-width: 200px;
+    min-width: 150px;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    h3 {
+      // color: white;
+      color: $green;
+      z-index: 5;
+      opacity: 0.6;
+      position: relative;
+      display: block;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      font-weight: 300;
+      float: left;
+      line-height: 1;
+      font-size: 4.5rem;
+      // padding-top: 1rem;
+      @include tablet {
+        padding: 0 1rem 0 2rem;
+        font-size: 3.5rem;
+        margin: 1rem auto;
+      }
+    }
+    p {
+      color: white;
+      z-index: 5;
+      position: relative;
+      width: 65%;
+      display: block;
+      // margin-left: 2rem;
+      margin: 0 auto;
+      text-align: left;
+      font-size: 2rem;
+      float: left;
+      font-weight: 400;
+      @include tablet {
+        font-size: 1.8rem;
+        padding: 0 2.5rem;
+      }
+    }
+    @include vsmallscreen {
+      width: 80%;
+    }
+  }
+}
+#sitePoints-sp {
+  background: url("../img/sitePoints-bg.png");
+  position: relative;
+  padding: 4rem 0;
+  z-index: -2;
+  @media screen and (min-width: #{$tablet-width + 1px}) {
+    display: none;
+  }
+  .hDivide {
+    content: attr(data-content);
+    border-top: 0.1rem solid #edf3f6;
+    width: 80%;
+    max-width: 320px;
+    margin: 0 auto;
+    // transform: translateY(1rem);
+    clear: both;
+    z-index: 5;
+    position: relative;
+  }
+  .point-block {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    @include vsmallscreen {
+      width: 80%;
+    }
+    min-width: 150px;
+    text-align: center;
+    h3 {
+      color: white;
+      // z-index: 5;
+      position: relative;
+      display: inline-block;
+      margin: 1.8rem auto;
+    }
+    p {
+      color: white;
+      // z-index: 5;
+      position: relative;
+      width: 60%;
+      display: inline-block;
+      margin-left: 1.8rem;
+      text-align: left;
+    }
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #00000000, black);
+    opacity: 0.6;
+    z-index: -1;
+  }
+}
+
+.totopArrow {
+  content: "->";
+  background: url("../img/totopArrow.png") no-repeat;
+  // background: url("../img/totopArrow.svg") no-repeat;
+  background-size: cover;
+  position: fixed;
+  margin: 0.1rem 2rem;
+  width: 42px;
+  bottom: 0;
+  right: 0;
+  height: 83px;
+  transition: all 0.3s;
+  z-index: 5;
+
+  &::before {
+    content: "";
+    // background-color: white;
+    mix-blend-mode: difference;
+    opacity: 0.2;
+    border-radius: 25%;
+    width: 87px;
+    height: 87px;
+    position: absolute;
+    top: 0;
+    left: -50%;
+    z-index: -100;
+  }
+  &:hover {
+    transform: translateY(-5px) scale(1.1);
+  }
+}
+
+button {
+  border: none;
+  font-size: 1.4rem;
+}
+div.str-buttons,
+a.contentpagelinks {
+  &:hover {
+    box-shadow: 3px 3px 3px 0 #00000040;
+    background: lighten($green, 10%);
+    transform: translateX(-2px) translateY(-2px);
+  }
+  @include desktop {
+    &:active {
+      background: $green;
+      box-shadow: inset 0px 0px 20px darken($green, 10%);
+      transform: translateX(1px) translateY(1px);
+    }
+  }
+}
+button.button,
+a.button,
+div.button {
+  vertical-align: middle;
+  text-align: center;
+  font-weight: $fw-regular;
+  display: inline-block;
+  width: 200px;
+  height: 30px;
+  background: $green;
+  color: white;
+  padding: 20px;
+  box-shadow: 5px 5px 1 1 #33333350;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.2s;
+  // transition: top ease 0.5s;
+  &:hover {
+    box-shadow: 3px 3px 3px 0 #00000040;
+    background: lighten($green, 10%);
+    transform: translateX(-2px) translateY(-2px);
+  }
+  @include desktop {
+    &:active {
+      background: $green;
+      box-shadow: inset 0px 0px 20px darken($green, 10%);
+      transform: translateX(1px) translateY(1px);
+    }
+  }
+
+  // img {
+  //   width: 33px;
+  //   height: 15px;
+  //   display: inline-block;
+  //   float: left;
+  // }
+  .jobtypes &::after {
+    content: attr(data-content);
+    background: url("../img/readmore-arrow.png") no-repeat;
+    width: 33px;
+    height: 15px;
+    top: 28px;
+    right: 3rem;
+    position: absolute;
+  }
+  .pageType-interview &::after {
+    content: attr(data-content);
+    background: url("../img/readmore-arrow.png") no-repeat;
+    width: 33px;
+    height: 15px;
+    top: calc(50% - 8px);
+    left: calc(50% - 16px);
+    position: absolute;
+  }
+}
+
+a.contentsPage {
+  @include desktop {
+    a.contentsPage:hover {
+      background: darken($green, 20%);
+    }
+    &:active {
+      background: $green;
+      box-shadow: inset 0px 0px 20px darken($green, 10%);
+      transform: translateX(1px) translateY(1px);
+    }
+  }
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.1);
+  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+  max-height: 100%;
+  z-index: 200;
+}
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 3rem 1.5rem;
+  width: 90%;
+  border-radius: 0.5rem;
+  height: 80%;
+  overflow-y: scroll;
+}
+
+.close-button {
+  float: right;
+  width: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 50px;
+  font-weight: $fw-regular;
+  text-decoration: none;
+  color: #333;
+
+  &:hover {
+    color: #38bcb6;
+  }
+}
+.show-modal {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* Modal のなかのコンテンツ切り替え*/
+.modal {
+  .modal-content {
+    position: relative;
+    overflow: hidden;
+    // padding: 0;
+    & h2 {
+      margin-top: 0;
+      color: #000;
+      font-size: 2.7rem;
+      font-weight: $fw-black;
+      display: inline-block;
+
+      span {
+        font-size: 7rem;
+        font-weight: $fw-light;
+        display: inline-block;
+        color: $yellow;
+        @media screen and (min-width: #{$tablet-width + 1px}) {
+          display: block;
+        }
+        text-align: left;
+      }
+    }
+    p.career-type {
+      color: $yellow;
+      font-weight: $fw-bold;
+      display: block;
+      margin: 0;
+    }
+  }
+}
+
+.modalInner_SmallScreen {
+  @include desktop {
+    display: none;
+  }
+  @include tablet() {
+    display: none;
+  }
+  @media screen and (max-width: #{$tablet-width}) {
+    .modal-content-s {
+      // max-height: 100%;
+      overflow: auto;
+      position: fixed;
+      width: 95%;
+      height: 65%;
+      overflow-y: auto;
+      max-height: calc(100% + 70px);
+      top: 35%;
+      bottom: 0;
+      &.eng {
+        height: 60%;
+        overflow-y: auto;
+        max-height: calc(100% + 70px);
+        top: 40%;
+      }
+      &.dir {
+        height: 70%;
+        overflow-y: auto;
+        max-height: calc(100% + 70px);
+        top: 30%;
+      }
+    }
+    h2 {
+      display: inline;
+      padding: 0;
+      margin: 0;
+      span {
+        display: inline;
+      }
+    }
+    .careertypbox {
+      clear: both;
+      div.buttons-div {
+        // float:right;
+      }
+    }
+    p.career-type {
+      color: $yellow;
+      font-weight: $fw-bold;
+      display: block;
+      // display: inline;
+      width: 15%;
+      min-width: 70px;
+      margin: 0;
+      float: left;
+    }
+    a.button {
+      padding: 0;
+      width: 60%;
+      max-width: calc(100% - 80px);
+      margin: 1% auto;
+      margin-right: 20%;
+      float: right;
+    }
+  }
+  @media screen and (max-width: #{$iphone678-width}) {
+    .modal-content-s {
+      // max-height: 100%;
+      overflow: auto;
+      position: fixed;
+      width: 95%;
+      height: 55%;
+      overflow-y: auto;
+      max-height: calc(100% + 70px);
+      top: 42%;
+      bottom: 0;
+      &.eng {
+        height: 50%;
+        overflow-y: auto;
+        max-height: calc(100% + 70px);
+        top: 48%;
+      }
+      &.dir {
+        height: 60%;
+        overflow-y: auto;
+        max-height: calc(100% + 120px);
+        top: 37%;
+      }
+    }
+  }
+  @media screen and (max-width: #{$iphone5-width}) {
+    a.button {
+      padding: 0;
+      width: 50%;
+      max-width: calc(100% - 80px);
+      margin: 1% auto;
+      margin-right: 20%;
+      float: right;
+    }
+    .modal-content-s {
+      // max-height: 100%;
+      overflow: auto;
+      position: fixed;
+      width: 95%;
+      height: 55%;
+      overflow-y: auto;
+      max-height: calc(100% + 70px);
+      top: 42%;
+      bottom: 0;
+      &.eng {
+        height: 50%;
+        overflow-y: auto;
+        max-height: calc(100% + 70px);
+        top: 48%;
+      }
+      &.dir {
+        height: 60%;
+        overflow-y: auto;
+        max-height: calc(100% + 120px);
+        top: 37%;
+      }
+    }
+  }
+}
+
+.modalInner_LargeScreen {
+  max-height: 85%;
+  overflow: auto;
+  position: absolute;
+  bottom: 2rem;
+  right: 22%;
+  width: 33%;
+  height: 100%;
+  @include smartphone {
+    display: none;
+  }
+  @include portraitTablet {
+    display: none;
+  }
+
+  label {
+    // left:80%;
+    // $labeltop-offset:50%;
+    // top:$labeltop-offset;
+    position: absolute;
+    bottom: 0;
+
+    div.button {
+      vertical-align: middle;
+      text-align: center;
+      font-size: 1.4rem;
+      font-weight: $fw-regular;
+      display: block;
+      width: 12vw;
+      height: 20px;
+      background: $green;
+      color: white;
+      padding: 10px;
+      box-shadow: 5px 5px 1 1 #33333350;
+      text-decoration: none;
+      position: relative;
+      text-align: left;
+      &.selectRadio {
+        background: none;
+        color: black;
+      }
+    }
+    &#de-button1 {
+      // right: 100px;
+      // top: 45% ;
+      bottom: -65px;
+    }
+    &#de-button2 {
+      // position: fixed;
+      bottom: calc(-65px - 50px);
+    }
+    &#en-button1 {
+      bottom: -65px;
+    }
+    &#en-button2 {
+      bottom: calc(-65px - 50px);
+    }
+    &#en-button3 {
+      bottom: calc(-65px - 50px - 70px);
+      div.button {
+        height: 40px;
+      }
+    }
+    &#di-button {
+      bottom: -65px;
+    }
+  }
+
+  .modal-fixed {
+    // position:fixed;
+    // right:20px;
+    position: fixed;
+    left: 80%;
+    line-height: 1.2;
+    & .career-type {
+      position: absolute;
+      left: 0;
+      bottom: -20px;
+    }
+  }
+  div {
+    img {
+      height: 100%;
+      width: 40vw;
+      object-fit: cover;
+      object-position: center middle;
+      position: fixed;
+      left: 0;
+      top: 0;
+    }
+  }
+}
+h3.contentInner-heading {
+  color: #000;
+  font-size: 3.3rem;
+  line-height: 1.5;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+input#menu-toggle {
+  display: none;
+}
+
+input#Content_WebDesgn {
+  display: none;
+}
+input#Content_UIUDDesgn {
+  display: none;
+}
+input#Content_Coder {
+  display: none;
+}
+input#Content_Programmer {
+  display: none;
+}
+input#Content_FrontEnd {
+  display: none;
+}
+input#Content_Director {
+  display: none;
+}
+
+//  Designer Modal Content 切り替え
+div#Content_WebDesgn {
+  display: none;
+}
+div#Content_UIUDDesgn {
+  display: none;
+}
+input#Content_WebDesgn:checked ~ div#Content_WebDesgn {
+  display: block;
+}
+
+input#Content_UIUDDesgn:checked ~ div#Content_UIUDDesgn {
+  display: block;
+}
+
+// Engineer Modal Content 切り替え
+div#Content_Coder {
+  display: none;
+}
+div#Content_Programmer {
+  display: none;
+}
+div#Content_FrontEnd {
+  display: none;
+}
+input#Content_Coder:checked ~ div#Content_Coder {
+  display: block;
+}
+
+input#Content_Programmer:checked ~ div#Content_Programmer {
+  display: block;
+}
+input#Content_FrontEnd:checked ~ div#Content_FrontEnd {
+  display: block;
+}
+
+// director modal content 切り替え（不要: 1つしかない）
+// div#Content_Director {
+//   display:none;
+// }
+// input#Content_Director:checked ~ div#Content_Director {
+// display:block;
+// }
+
+// -------------------------------------------------------------------------------//
+// Contents page 月替わりコンテンツ
+// -------------------------------------------------------------------------------//
+.pageType-interview {
+  .cont-keyvis {
+    @include smartphone {
+      background: url(../img/sp/contint-img1sp.png) no-repeat;
+      background-size: cover;
+    }
+    @media screen and (min-width: #{$smartphone-width + 1px}) {
+      background: url(../img/contint-img1.png) no-repeat;
+      background-size: cover;
+    }
+    @include desktop {
+      background: url(../img/contint-img1.png) no-repeat;
+      width: 70%;
+      margin-left: 30%;
+      background-size: cover;
+      @media screen and (min-height: 800px) {
+        margin: 80px 0 15vh auto;
+      }
+      @media screen and (min-height: 1080px) {
+        margin: 80px 0 20vh auto;
+      }
+      // margin: 80px 0 20vh auto;
+
+      // float: right;
+      background-position: center right;
+    }
+    height: 373px;
+    margin-top: 80px;
+    position: relative;
+    .txt-plc {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      text-align: right;
+      margin: 1.8rem;
+      margin-bottom: -0.2rem;
+    }
+    h1 {
+      background-color: $yellow2;
+      // background-image: linear-gradient(transparent 50%, $yellow2 50%);
+      display: inline;
+      font-size: 3.5vh;
+      padding: 0;
+      line-height: 1.6;
+      font-weight: $fw-regular;
+    }
+    @media (max-width: #{$iphone678-width}) {
+      max-height: 35vh;
+    }
+    @media (max-width: #{$iphone5-width}) {
+      max-height: 32vh;
+    }
+  }
+  .cont-keyvis.secondInterview {
+    @include smartphone {
+      background: url(../img/sp/contint2-img1sp.png) no-repeat;
+      background-size: cover;
+    }
+    @media screen and (min-width: #{$smartphone-width + 1px}) {
+      background: url(../img/contint2-img1.png) no-repeat;
+      background-size: cover;
+    }
+    @include desktop {
+      background: url(../img/contint2-img1.png) no-repeat;
+      margin-left: 30%;
+      width: 70%;
+
+      background-size: cover;
+      @media screen and (min-height: 800px) {
+        margin: 80px 0 15vh auto;
+      }
+      @media screen and (min-height: 1080px) {
+        margin: 80px 0 20vh auto;
+      }
+      // margin: 80px 0 20vh auto;
+
+      // float: right;
+      background-position: center right;
+    }
+    height: 373px;
+    margin-top: 80px;
+    position: relative;
+    .txt-plc {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      text-align: right;
+      margin: 1.8rem;
+      margin-bottom: -0.2rem;
+    }
+    h1 {
+      background-color: $yellow2;
+      // background-image: linear-gradient(transparent 50%, $yellow2 50%);
+      display: inline;
+      font-size: 3.5vh;
+      padding: 0;
+      line-height: 1.6;
+      font-weight: $fw-regular;
+    }
+    @media (max-width: #{$iphone678-width}) {
+      max-height: 35vh;
+      h1 {
+        font-size: 3.2vh;
+      }
+    }
+    @media (max-width: #{$iphone5-width}) {
+      max-height: 32vh;
+    }
+  }
+  .cont-h2 {
+    background: url(../img/cont-h2.png) no-repeat;
+    background-size: cover;
+    width: 100vw;
+    top: 25vh;
+    @include desktop {
+      // top: 25vh;
+    }
+
+    height: 30vh;
+    z-index: -10;
+    position: absolute;
+    @include smartphone {
+      // top: 0;
+      // bottom: 0vh;
+    }
+    h2 {
+      color: white;
+      font-weight: $fw-regular;
+      line-height: 1;
+      font-size: 5.3rem;
+      // padding-top: 1.6vh;
+      margin: 0;
+      text-align: left;
+      position: absolute;
+      left: 0.8rem;
+      bottom: -1vh;
+    }
+  }
+
+  .interviewBody {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    [class*="box"] {
+      @include desktop {
+        width: 80%;
+        max-width: 500px;
+      }
+      &.box7 {
+        max-width: 1100px;
+        justify-self: center;
+      }
+      // padding: 1rem;
+      &.box1,
+      &.box8 {
+        padding: 0;
+        width: 90%;
+        max-width: 1200px;
+      }
+    }
+
+    @include desktop {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      padding: 0;
+      align-content: baseline;
+
+      .box1 {
+        display: grid;
+        align-content: center;
+        img {
+          width: 90%;
+        }
+      }
+      .box2 {
+        order: 2;
+      }
+      .box3 {
+        order: 4;
+        display: grid;
+        align-content: center;
+        div.wrap {
+          // border: 2px solid $yellow2;
+          padding-top: 6rem;
+          padding-bottom: 6rem;
+          background-color: lighten($yellow2, 45%);
+        }
+      }
+      .box4 {
+        order: 3;
+        justify-self: end;
+      }
+      .box5 {
+        order: 5;
+        display: grid;
+        align-content: center;
+        justify-self: end;
+        div.wrap {
+          // border: 2px solid $yellow2;
+          padding-top: 6rem;
+          padding-bottom: 6rem;
+          background-color: lighten($yellow2, 45%);
+        }
+      }
+      .box6 {
+        order: 6;
+      }
+      .box7 {
+        order: 7;
+        grid-column: span 2;
+      }
+      .box8 {
+        order: 9;
+        display: grid;
+        align-content: center;
+        justify-self: end;
+        width: 90%;
+      }
+      .box9 {
+        order: 8;
+        justify-self: end;
+      }
+    }
+
+    .h-wrap {
+      margin: 1rem;
+    }
+    h3 {
+      display: inline;
+      background-color: $yellow2;
+      color: black;
+      font-weight: $fw-bold;
+      font-size: 2.9rem;
+      line-height: 1.6;
+    }
+    .dtdd {
+      margin: 0 2.3rem;
+      font-size: 1.5rem;
+      & dt {
+        margin-top: 1.8rem;
+      }
+      & dd {
+        margin-bottom: 1.8rem;
+      }
+    }
+    dt {
+      background: black;
+      color: white;
+      display: inline;
+      // padding:0.5rem;
+      line-height: 2;
+    }
+    dd {
+      display: inline;
+      margin-inline-start: 0px;
+      line-height: 1.5;
+    }
+    div.QA {
+      padding: 2.5rem 1.8rem;
+      // position:relative;
+      box-sizing: border-box;
+      width: 100%;
+      // margin: 0 auto;
+      // div.questionwrap {
+      // margin: 2rem;
+      // }
+      p {
+        overflow: auto;
+        margin-top: 1rem;
+      }
+      .questionbox {
+        box-sizing: border-box;
+        display: inline-block;
+        width: 80%;
+        // border: 1px solid red;
+        vertical-align: top;
+        margin-top: 1rem;
+      }
+      p.question {
+        display: inline;
+        font-size: 2rem;
+        font-weight: $fw-black;
+        background-image: linear-gradient(transparent 50%, $yellow 50%);
+      }
+    }
+    span {
+      font-size: 3rem;
+      font-weight: $fw-black;
+      margin: 0 2rem;
+      text-decoration: none;
+      float: left;
+      display: inline-flex;
+      overflow: auto;
+      margin-top: 1rem;
+    }
+  }
+
+  img.contint-img {
+    width: 100%;
+  }
+}
+.quote {
+  position: relative;
+  font-weight: $fw-bold;
+  line-height: 1.8;
+  width: 70%;
+  margin: 6rem auto;
+  font-size: 2.5rem;
+  &.small {
+    width: 45%;
+  }
+  &::before {
+    content: "";
+    background: url(../img/L-quotation-mark.png) no-repeat;
+    background-size: 34px;
+    position: absolute;
+    width: 34px;
+    height: 100%;
+    top: -1rem;
+    left: -39px;
+  }
+  &::after {
+    content: "";
+    background: url(../img/R-quotation-mark.png) no-repeat;
+    background-size: 34px;
+    position: absolute;
+    width: 34px;
+    height: 100%;
+    top: calc(100% - (34px / 4 * 3));
+    right: -39px;
+  }
+  @include iphone678 {
+    font-size: 2rem;
+    margin-top: 8rem;
+    margin-bottom: 0;
+  }
+  @include vsmallscreen {
+    font-size: 1.8rem;
+    margin-top: 6rem;
+    margin-bottom: -2rem;
+  }
+}
+.highlightWrap {
+  max-width: 1350px;
+  width: 90%;
+  margin: 0 auto;
+}
+.prevContents {
+  // background: url(../img/prevCont-bg.png) right no-repeat;
+  background-size: cover;
+  margin: 10vh auto;
+  .contDivide {
+    content: attr(data-content);
+    border-top: 0.1rem solid black;
+    width: 75%;
+    margin: 70px auto 0;
+    clear: both;
+    z-index: 5;
+    position: relative;
+    @include desktop {
+      border-top: 0.1rem solid $yellow;
+      width: 100%;
+    }
+  }
+  .highlightWrap {
+    max-width: 1000px;
+    width: 80%;
+    margin: 0 auto;
+  }
+  h3 {
+    font-weight: $fw-bold;
+    font-size: 2rem;
+    color: black;
+    display: inline-block;
+    @include desktop {
+      width: 80%;
+      margin: 0 auto;
+      max-width: 260px;
+      display: inline-block;
+      text-align: left;
+      margin: 2rem auto 4rem;
+      &::after {
+        content: "";
+      }
+    }
+  }
+  .cardContainer {
+    display: grid;
+    // justify-content: space-around;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1000px;
+
+    a > img {
+      transition: all 0.3s;
+      width: 100%;
+    }
+    a > img:hover {
+      transform: scale(0.9);
+    }
+  }
+}
+.contentCard {
+  background: white;
+  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.1);
+  max-width: 29%;
+
+  img {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  .contentDate {
+    color: $yellow2;
+    font-size: 1rem;
+    float: left;
+    margin: 5px;
+  }
+  .contentLabel {
+    font-size: 1.1rem;
+    color: $yellow2;
+    text-align: center;
+    background: #000;
+    float: right;
+  }
+  .contentTitle {
+    font-size: 1rem;
+  }
+
+  .button {
+    max-width: 100%;
+    padding: 0;
+  }
+}
+.dots {
+  .dot {
+    height: 25px;
+    width: 25px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+  }
+}
+.contint-img.SPonly {
+  @include tablet {
+    display: none;
+  }
+  @include portraitTablet {
+    display: none;
+  }
+}
+
+.scrollbuttonbox {
+  background: #000;
+  margin: 0 auto;
+  width: 40%;
+  color: white;
+  text-align: center;
+  margin-top: 15vh;
+  p {
+    margin: 0;
+
+    font-size: 1.1rem;
+  }
+  .clickDown {
+    font-size: 1.3rem;
+  }
+}
+.clearfix {
+  &.space {
+    margin: 20rem auto;
+  }
+}
+
+// /* width */
+// ::-webkit-scrollbar {
+//   width: 10px;
+// }
+
+// /* Track */
+// ::-webkit-scrollbar-track {
+//   background: #f1f1f1;
+// }
+
+// /* Handle */
+// ::-webkit-scrollbar-thumb {
+//   background: #888;
+// }
+
+// /* Handle on hover */
+// ::-webkit-scrollbar-thumb:hover {
+//   background: #555;
+// }
+
+.pageType-taiken {
+  .taikenBody {
+    width: 90%;
+    max-width: 960px;
+    padding: 2rem;
+    margin: 0 auto;
+    position: relative;
+
+    .col1 > img {
+      display: block;
+      @include smartphone {
+        // position: absolute;
+        width: 100%;
+      }
+      @include portraitTablet() {
+        // position: absolute;
+        width: 80%;
+        margin: 3rem auto;
+      }
+      @include tablet {
+        // position: absolute;
+        width: 80%;
+        margin: 3rem auto;
+      }
+    }
+
+    h2 {
+      display: inline;
+      background-color: #ffd500;
+      color: black;
+      font-weight: 700;
+      font-size: 2.9rem;
+      line-height: 1.6;
+      text-align: center;
+    }
+    @include desktop {
+      .col1 {
+        float: left;
+        img {
+          position: absolute;
+          width: 45%;
+        }
+      }
+      .col2 {
+        margin-left: 50%;
+        width: 50%;
+        margin-bottom: 10rem;
+        margin-top: 2rem;
+      }
+    }
+    pre {
+      border: #333;
+      box-shadow: 0 0 2px 0 #333;
+      width: 80%;
+      margin: 0 auto;
+    }
+    code {
+      font-size: 1.6rem;
+      @include smartphone {
+        font-size: 1rem;
+      }
+      text-align: left;
+      line-height: 1;
+    }
+    .instructionSlider {
+      div {
+        width: 80%;
+        height: 90%;
+        margin: 0 auto;
+      }
+      h3 {
+        font-size: 2.5rem;
+        font-weight: 400;
+        color: black;
+        text-align: center;
+        width: 80%;
+        margin: 0 auto;
+        background: none;
+
+        span {
+          color: $green;
+          font-size: 4rem;
+        }
+      }
+      p {
+        width: 80%;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .cont-keyvis {
+    @include smartphone {
+      background: url(../img/sp/conttai-img1sp.png) no-repeat;
+      background-size: cover;
+    }
+    @media screen and (min-width: #{$smartphone-width + 1px}) {
+      background: url(../img/conttai-img1.png) no-repeat;
+      background-size: cover;
+    }
+    @media screen and (min-height: 800px) {
+      margin: 80px 0 15vh auto;
+    }
+    @media screen and (min-height: 1080px) {
+      margin: 80px 0 20vh auto;
+    }
+    @include desktop {
+      background: url(../img/conttai-img1.png) no-repeat;
+      width: 70%;
+      margin-left: 30%;
+
+      background-size: cover;
+
+      // margin: 80px 0 20vh auto;
+
+      // float: right;
+      background-position: center right;
+    }
+
+    height: 373px;
+    margin-top: 80px;
+    position: relative;
+    .txt-plc {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      text-align: right;
+      margin: 1.8rem;
+      margin-bottom: -0.2rem;
+    }
+    h1 {
+      background-color: $yellow2;
+      // background-image: linear-gradient(transparent 50%, $yellow2 50%);
+      display: inline;
+      font-size: 3.5vh;
+      padding: 0;
+      line-height: 1.6;
+      font-weight: $fw-regular;
+    }
+    @media (max-width: #{$iphone678-width}) {
+      max-height: 35vh;
+    }
+    @media (max-width: #{$iphone5-width}) {
+      max-height: 32vh;
+    }
+  }
+  .cont-h2 {
+    background: url(../img/cont-h2.png) no-repeat;
+    background-size: cover;
+    width: 100vw;
+    top: 25vh;
+    height: 30vh;
+    z-index: -10;
+    position: absolute;
+    h2 {
+      color: white;
+      font-weight: $fw-regular;
+      line-height: 1;
+      font-size: 5.3rem;
+      // padding-top: 1.6vh;
+      margin: 0;
+      text-align: left;
+      position: absolute;
+      left: 0.8rem;
+      bottom: -1vh;
+    }
+  }
+  .mainTaiken {
+    padding-top: 4rem;
+    @include desktop {
+      div.left-col {
+        float: left;
+        width: 60%;
+      }
+      div.right-col {
+        float: right;
+        width: 39%;
+      }
+    }
+    h3 {
+      font-size: 2.5rem;
+      font-weight: 400;
+      color: black;
+      text-align: center;
+      width: 80%;
+      margin: 0 auto;
+      background: none;
+      // display: block;
+      margin: 3rem auto;
+      span {
+        color: $green;
+        font-size: 4rem;
+      }
+    }
+    p {
+      width: 80%;
+      margin: 0 auto;
+    }
+    img {
+      margin: 3rem auto;
+      width: 100%;
+      display: block;
+      @media screen and (max-width: #{$desktop-width} ) {
+        max-width: 500px;
+        margin: 3rem auto;
+      }
+    }
+  }
+
+  img.contint-img {
+    width: 100%;
+  }
+}
+
+.pageType-interview,
+.pageType-taiken {
+  & > nav .wrapper a.contentsPage {
+    @include desktop {
+      color: white;
+    }
+    color: black;
+    font-weight: $fw-light;
+  }
+}
+figure {
+  width: 100%;
+  height: 60vh;
+  background: $grey;
+}
+
+div.cntContainer.SPonly {
+  @media screen and (min-width: 600px) {
+    display: none;
+  }
+}
+
+@include smartphone {
+  div.cardContainer.larger {
+    display: none;
+  }
+  .largerscreensonly {
+    display: none;
+  }
+}
+
+// Loader
+
+/* Paste this css to your style sheet file or under head tag */
+/* This only works with JavaScript, 
+if it's not present, don't show loader */
+.no-js #loader {
+  display: none;
+}
+.js #loader {
+  display: block;
+  position: absolute;
+  left: 100px;
+  top: 0;
+}
+.se-pre-con {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url(../img/loader-64x/Preloader_4.gif) center no-repeat #fff;
+}
+
+// PARTICLES.JS
+/* ---- particles.js container ---- */
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+} /* ---- stats.js ---- */
+.count-particles {
+  background: #000022;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: 80px;
+  color: #13e8e9;
+  font-size: 0.8em;
+  text-align: left;
+  text-indent: 4px;
+  line-height: 14px;
+  padding-bottom: 2px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+.js-count-particles {
+  font-size: 1.1em;
+}
+#stats,
+.count-particles {
+  -webkit-user-select: none;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+#stats {
+  border-radius: 3px 3px 0 0;
+  overflow: hidden;
+}
+.count-particles {
+  border-radius: 0 0 3px 3px;
+}
+.prevContents {
+  position: relative;
+}
+#particles-js {
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  background-size: cover;
+  width: 100%;
+  // height: 100vh !important;
+  background-color: #ffffff00;
+}
+
+.invisible {
+  display: none;
+}
+
+.invisible.active {
+  display: block;
+  color: darken($yellow2, 20%);
+  background-color: lighten($yellow, 20%);
+  border: $yellow2 solid 1px;
+  margin: 10px auto;
+  padding: 20px;
+  width: 60%;
+  font-size: 1.6rem;
+}
+.pageType-taiken,
+.pageType-interview {
+  nav .wrapper a.contentsPage.backtotop {
+    @media screen and (max-width: #{$tablet-width}) {
+      color: $green;
+      font-weight: $fw-bold;
+    }
+  }
+  #particles-js {
+    position: absolute;
+    top: 0;
+    z-index: -2;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    height: 100vh !important;
+    background-color: #ffffff00;
+  }
+}
+#particles-js2 {
+  position: absolute;
+  top: 0;
+  z-index: -2;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  height: 100vh !important;
+  background-color: #ffffff00;
+}
+
+.anchor-offset {
+  display: block;
+  position: relative;
+  visibility: hidden;
+  @include smartphone {
+    top: -100px;
+  }
+  @include iphone678 {
+    top: -100px;
+  }
+  @include vsmallscreen {
+    top: -100px;
+  }
+  @include desktop {
+    top: -110px;
+  }
+}
+
+.enText {
+  font-family: $font-midashi;
+}
+.timeline-l > h3 {
+  font-family: $font-midashi;
+
+  span {
+    font-size: 2.6rem;
+    font-family: $font-stack;
+  }
+}

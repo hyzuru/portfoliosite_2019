@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Hobby｜Jacqueline Yeung</title>
+  <meta name="description" content="Blueprint: Slide and Push Menus" />
+  <meta name="keywords" content="sliding menu, pushing menu, navigation, responsive, menu, css, jquery" />
+  <meta name="author" content="Codrops" />
+  <link rel="stylesheet" type="text/css" href="../css/normalize.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="../css/default.css" />
+  <link rel="stylesheet" type="text/css" href="../css/component.css" />
+  <!-- <link rel="stylesheet" type="text/css" href="../css/flexslider.css" media="screen"> -->
+  <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen">
+  <script src="../js/jquery.min.js"></script> 
+  <script src="../js/jquery.pagetop.js"></script>
+  <!-- <script src="../js/jquery.flexslider-min.js"></script> -->
+  <script src="../js/modernizr.custom.js"></script>
+<script src="../js/script.js"></script>
+</head>
+
+<body class="cbp-spmenu-push ">
+		<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+			<h3>Menu</h3>
+			<a href="../index.html">HOME</a>
+			<a href="../hobby/index.html">HOBBY</a>
+			<a href="../history/index.html">TIMELINE</a>
+			<a href="../photo/index.html">PHOTOGRAPHY</a>
+			<a href="../resume/index.html">RESUME</a>
+		</nav>
+		<div class="container">
+			<header class="clearfix">
+				<span><a href="../index.html">Jacqueline Yeung</a></span>
+				<h1>LIKES AND INTERESTS</h1>
+				<div class="main">
+						<section class="buttonset">
+							<button id="showRightPush">NAVIGATION</button>
+						</section>
+					</div>
+				</div>
+			</header>
+  <div class="bg"></div>
+<main class="wrapper ">
+<aside>
+  <ul>
+      <li><a href="#food" class="scrolltoanchor" >Food</a></li>
+      <li><a href="#music" class="scrolltoanchor">Music</a></li>
+      <li><a href="#photography" class="scroll">Photography</a></li>    
+      <li><a href="#Travel" class="scroll">Travel</a></li>    
+  </ul>  
+</aside>
+
+<section id="main_contents">
+  <div id="food">
+  <h2 class="foodtitle">Food</h2>
+  <div class="foodphotos">
+  <div class="food1"><p><a href="">焼肉</a></p></div>
+  <div class="food2"><p><a href="">チーズケーキ</a></p></div>
+  <div class="food3"><p><a href="">バーガー</a></p></div>
+  <div class="food4"><p><a href="">コーヒー</a></p></div>
+  </div>
+  </div>
+</div> <!--DIV id=food -->
+
+<div id="music">
+<h2>Music</h2>
+<div class="bands">
+<span class="band1"><a href="http://siamshade.jp/"></a></span>
+<span class="band2"><a href="http://direngrey.co.jp/"></a></span>
+<span class="band3"><a href="http://sid-web.info/pc_index.html"></a></span>
+<span class="band4"><a href="http://theoralcigarettes.com/"></a></span>
+<span class="band5"><a href="https://55-69.com/"></a></span>
+</div>
+</figure>
+</div> <!--DIV id=music -->
+<div id="live">
+    <h2>Live</h2>
+    <div class="photos">
+      <img src="images/lslive.jpg">
+    </div>
+</div>
+<div id="photography">
+  <h2>Photography</h2>
+
+  <div class="photos">
+    <img src="images/fireworks.jpg">
+  </div>
+
+</div><!--DIV id=photography -->
+
+<div id="Travel">
+  <h2>Travel</h2>
+<ul>
+  <li>オーストラリア</li>
+  <li>ニュージーランド</li>
+  <li>韓国</li>
+  <li>日本</li>
+  <li>香港</li>
+  <li>ベトナム</li>
+  <li>イギリス</li>
+  <li>ベルギー</li>
+  <li>ドイツ</li>
+  <li>チェコ共和国</li>
+  <li>ポーランド</li>
+  <li>オーストリア</li>
+  <li>イタリア</li>
+  <li>ヴァチカン</li>
+  <li>スイス</li>
+  <li>フランス</li>
+</ul>
+  </div><!--DIV id=series -->
+
+
+</section> <!-- <section id="main_contents"> -->
+
+</main>
+
+<!--This is the footer-->
+  <footer>
+			<div class="footer">
+				<p>
+					<small>Copyright ©
+						<script>
+							var d = new Date()
+							document.write(d.getFullYear())
+						</script> Jacqueline Yeung Design</small>
+				</p>
+			</div>
+		</footer>
+    <div class="pageTop"><a href="#header"><img src="../images/totop.png" width="42" height="42" alt="pageTop"></a></div>
+    <script src="js/second.js"></script>  
+
+
+		<!-- Classie - class helper functions by @desandro https://github.com/desandro/classie -->
+		<script src="js/classie.js"></script>
+		<script>
+			var menuRight = document.getElementById( 'cbp-spmenu-s2' ),
+				showRightPush = document.getElementById( 'showRightPush' ),
+				body = document.body;
+
+			showRightPush.onclick = function() {
+				classie.toggle( this, 'active' );
+				classie.toggle( body, 'cbp-spmenu-push-toleft' );
+				classie.toggle( menuRight, 'cbp-spmenu-open' );
+				disableOther( 'showRightPush' );
+			};
+
+		</script>
+</body>
+</html>

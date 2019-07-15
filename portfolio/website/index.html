@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="jp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Wan Work Web キャンペーンサイト | DESIGN THE FUTURE</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
+    <link rel="stylesheet" type="text/css" href="css/aos.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/scrollreveal@4.0.0.min.js"></script>
+    <!-- <script src="js/jquery.scrollme.js"></script> -->
+    <script src="js/vue.js"></script>
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script> -->
+    <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script> -->
+    <script src="js/modernizr.js"></script>
+    <!-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
+    <script src="js/aos.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+      Vue.config.devtools = true
+      window.onload = function () {
+      let inputApp = new Vue({
+        el: '#app',
+        data: {
+          // output: 'ありがとうございました。まもなく確認のメールをお届けします。'
+          output: '',
+          isActive: false,
+          email: '',
+          reg: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/ 
+        },
+        // components: {
+        //   submit: submit
+        // },
+        methods: {
+          getFormValues () {
+            this.output = 'ありがとうございました! "' + this.$refs.my_input.value + '" でメルマガを登録しました。まもなく確認のメールをお届けします。'
+            // console.log(this.output)       
+         }
+    
+        }
+      });
+    }
+    </script>
+  </head>
+  <body>
+      <div class="se-pre-con"></div>
+
+    <nav class="navBar">
+      <div class="wrapper PConly">
+        <a href="index.html" class="logo"></a>
+        <input type="checkbox" id="menu-toggle" onclick="lockScroll();" />
+        <label for="menu-toggle" class="label-toggle"></label>
+        <ul>
+          <li>
+            <a href="#1" class="menubutton active" onclick="lockScroll();"
+              >TOP</a
+            >
+          </li>
+          <li>
+            <a href="#2" class="menubutton" onclick="lockScroll();"
+              >Why the Web?</a
+            >
+          </li>
+          <li>
+            <a href="#3" class="menubutton" onclick="lockScroll();"
+              >Why WanWorkWeb?</a
+            >
+          </li>
+          <li>
+            <a href="#4" class="menubutton" onclick="lockScroll();">Work!</a>
+          </li>
+          <li>
+            <a href="content/designer-interview.html" class="contentsPage">
+              今月特集 
+              <img src="img/readmore-arrow.png" alt="→" class="PConly navArrow" />
+              <span class="SPonly navContents">インタビューをチェック</span>
+            </a>
+          </li>
+          <li></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="page-section" id="1">
+      <!-- Key Visual -->
+      <div id="keyvisual" data-aos="fade-down" data-aos-duration="2000">
+          <div id="particles-js2"></div>
+        <h1 lang="ja">
+          <!-- <span class="boldTitle">DESIGN</span><br class="SPonly" /> -->
+          DESIGN<br class="SPonly" />
+          THE FUTURE
+        </h1>
+        <h2>
+          未来のクリエイターが<br class="SPonly" />最初から成功できる出会い
+        </h2>
+
+        <p class="with-message"><span class="span1">with</span>
+          <span>Wan Work Web</span></p>
+        <p class="poweredby">
+          Powered by <img src="img/wan55logo-wh.png" alt="ワンゴジュウゴ" />
+        </p>
+
+        <div id="sitePoints" >
+          <div class="verticalDivider"></div>
+          <div class="point-block">
+            <h3>01</h3>
+            <p>充実な教育制度で<br class="PConly">未経験者でもOK!</p>
+          </div>
+          <div class="verticalDivider"></div>
+          <div class="point-block">
+            <h3>02</h3>
+            <p>仕事と会社と成功<br class="PConly">するマッチング</p>
+          </div>
+          <div class="verticalDivider"></div>
+          <div class="point-block">
+            <h3>03</h3>
+            <p>未来のクリエイターを<br class="PConly">応援していく</p>
+          </div>
+          <div class="verticalDivider"></div>
+        </div>
+      </div>
+      <div class="bg-white">
+        <p class="center">スクロール</p>
+        <!-- <div class="verticalDivider"></div> -->
+        <div class="c-scrolldown"><div class="c-line"></div></div>
+      </div>
+
+      <!-- 特徴3つ -->
+      <div id="sitePoints-sp">
+        <div data-aos="fade-up" data-aos-duration="1500">
+            <div class="hDivide"></div>
+            <div class="point-block">
+              <h3>01</h3>
+              <p>充実な教育制度で<br />未経験者でもOK!</p>
+            </div>
+            <div class="hDivide"></div>
+            <div class="point-block">
+              <h3>02</h3>
+              <p>仕事と会社と成功<br />するマッチング</p>
+            </div>
+            <div class="hDivide"></div>
+            <div class="point-block">
+              <h3>03</h3>
+              <p>未来のクリエイターを<br />応援していく</p>
+            </div>
+            <div class="hDivide"></div>
+        </div>
+  
+      </div>
+    </div>
+
+    <div class="page-section " id="2">
+      <section class="about " data-aos="fade-up">
+        <!-- <a name="whytheweb" class="page-section" id="2"></a> -->
+
+        <div class="about-1" data-aos="fade-right" data-aos-duration="1000">
+          <h2 class="enText">WHY THE WEB?</h2>
+          <p>
+            インターネットやスマートフォンアプリ、多岐にわたっているSNSなど、Webサービスを使わない日はないといっても過言ではありません。
+          </p>
+          <p>
+            デザインやコーディング、Webサイトやアプリなどで多くの人を影響できるWeb業界の仕事。
+          </p>
+          <p class="tagline">今からWebの<br class="SPonly" />仕事をしない？</p>
+          <div class="clearfix"></div>
+
+          <!-- <img src="" alt="" /> <img src="" alt="" /> -->
+        </div>
+        <div class="about-image1 PConly animateme" 
+        data-when="enter"
+        data-from="0.5"
+        data-to="0"
+        data-opacity="0"
+        data-translatex="-200"
+        data-rotatez="90"></div>
+        <div class="about-image2 timeReveal5 load-hidden"
+        data-aos="fade-left" data-aos-duration="2000"></div>
+
+        <div class="bg-grey " >
+          <div class="about-image3 PConly timeReveal load-hidden" 
+          data-aos="fade-right" data-aos-duration="1000"></div>
+          <div class="about-image4 timeReveal load-hidden"
+          data-aos="fade-left" data-aos-duration="1000"></div>
+<div data-aos="fade-left" data-aos-duration="2000" class="alwaysChanging">
+   <h3 class="timeReveal load-hidden enText">ALWAYS CHANGING</h3>
+          <p>
+            常に進化しているWeb業界では新しいと思っていたものが古くなっていく。学び続けるきりがないが、Webの面白さがそこにある。
+          </p>
+          <p>
+            毎年のように新しい技術やハードウェア、トレンドが登場し、流行するものもあれば、それによって廃れていくものもあります。激しい競争があり、厳しい世界ですが、それはすなわちたくさんの企業や団体、人が、webに力を注いでいるということ。
+          </p>
+          <p>これまで約20年間世の中の技術は大きく変わりました。</p>
+        </div>
+</div>
+         
+        <div class="clearfix about"></div>
+      </section>
+      <section class="timeline" data-aos="fade-up" data-aos-duration="2000">
+        <div class="wrap">
+          <!-- <svg style="width:100%;height:100%;">
+          <line x1="0%" y1="0%" x2="0%" y2="100%" style="stroke: white ;stroke-width: 1;"></line>
+      </svg> -->
+          <div class="timeline-l">
+            <h2 class="h-yellow enText">THROUGH <br class="SPonly" />THE YEARS</h2>
+            <h3 class="dateHeader timeReveal load-hidden">1991<span>年</span> ― 1992<span>年</span></h3>
+            <p class="timeReveal load-hidden">
+              世界初のWebサイトが公開されたのが1991年、翌1992年には日本発のWebサイトが公開されました。
+            </p>
+            <h3 class="dateHeader timeReveal load-hidden">2000<span>年</span> ― 2009<span>年</span></h3>
+            <p class="timeReveal load-hidden">
+              日本でインターネットの人口普及率が30%、
+              2009年までに利用者が人口の65%を超える
+            </p>
+            <h3 class="dateHeader timeReveal load-hidden ">2010<span>年</span> ― 2014<span>年</span></h3>
+            <p class="timeReveal load-hidden ">日本でも一躍有名となったJavaScriptライブラリjQueryが誕生</p>
+            <p class="timeReveal load-hidden ">CSS3が誕生</p>
+            <p class="timeReveal load-hidden ">
+              HTML5が誕生。動画などマルチメディアも簡単によみこめるようになりました。CSS3との併用でさらにできることが増えました。
+            </p>
+            <h3 class="dateHeader timeReveal load-hidden ">2015<span>年</span></h3>
+            <p class="timeReveal load-hidden ">日本のインターネット利用者が90%を超える</p>
+            <h3 class="dateHeader timeReveal load-hidden ">2019<span>年</span></h3>
+            <p class="timeReveal load-hidden ">WanWorkWeb公開予定。</p>
+          </div>
+
+          <div class="nextstep-container timeReveal load-hidden">
+            <p class="nextstep time-tag timeReveal load-hidden">今から入りませんか？</p>
+            <p class="nextstep timeReveal load-hidden">
+              普段Webを触れて生活しているあなたに、Webの仕事を始めたいと思うならWanWorkWebでその出会いを掴もう。
+            </p>
+            <h3 class="nextstep timeReveal load-hidden">次の一歩は<br />クリエイターの道に</h3>
+          </div>
+          <div class="nextstep-image timeReveal load-hidden" 
+               data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear"></div>
+        </div>
+      </section>
+      <section class="creativework " >
+        <div>
+            <div class="bg-grey " data-aos="fade-right" data-aos-duration="2000">
+                <div class="create-container" >
+                  <h2 class="enText">CREATIVE WORK</h2>
+                  <img src="" alt="" class="PConly" />
+                  <p>
+                    Webサイトやアプリ、さまざまなことを作るのは
+                    デザイナー、エンジニア、ディレクターなどのクリエイターです。
+                    かっこいいだけではなく、人の心を動かせて、よりいい生き方を
+                    できるように、Webクリエイターが努力しています。
+                  </p>
+                </div>
+                  <div class="creativework-image PConly " data-aos="fade-up" data-aos-duration="2000"
+              ></div>
+              </div>
+              <div class="creativework-image SPonly " data-aos="fade-up" data-aos-duration="2000"
+              ></div>
+        </div>
+
+        <div class="creative-2 timeReveal load-hidden">
+          <h3>最初から成功する<br /><span class="enText">WanWorkWeb</span>の求人サービス</h3>
+          <div class="bg-grey timeReveal load-hidden">
+            <p>
+              WanWorkWebの求人サービス「WanWorkWeb」では、
+              就職とは最終目的ではない、<span class="highlight"
+                >はじまりだ。</span
+              >
+            </p>
+          </div>
+        </div>
+        <div class="bg-work bg-work-sp timeReveal load-hidden"
+        data-aos="fade-left" data-aos-duration="1000"></div>
+        <div class="bg-black-work PConly timeReveal load-hidden"
+        data-aos="fade-right" data-aos-duration="1000"></div>
+
+        <h4 class="bg-text timeReveal load-hidden" data-aos="fade-right" data-aos-duration="2000">Begin with success</h4>
+        <p class="bg-text2 timeReveal load-hidden" data-aos="fade-right" data-aos-duration="2000">
+          入る職場や仕事内容が思ったのとは違う。こんな後悔や失敗をしないようなサービス。頑張っているあなたに合う職種、職場との
+          出会いを創出します。
+        </p>
+      </section>
+    </div>
+    <div class="page-section" id="3">
+      <section class="strengths">
+        <!-- <div class="bg-grey2"> -->
+
+        <div class="bg-black timeReveal load-hidden"
+        data-aos="fade-right" data-aos-duration="2000"><h2><span class="enText">WanWorkWeb</span>の特長</h2></div>
+        <div class="right-container timeReveal2 load-hidden">
+          <!-- <a name="whywww" class="page-section" id="3"></a> -->
+          <div class="PConly bg-grey2 timeReveal load-hidden"
+          data-aos="fade-left" data-aos-duration="2000">
+            <a href="#rightjob">
+              <div class="str-buttons timeReveal3 load-hidden">
+                <h3 class="enText">01</h3>
+                <div class="hDivide"></div>
+                <p class="enText">The right job<br>本当にやりたい仕事を<br>見つけられる</p>
+              </div>
+            </a>
+            <a href="#rightplace">
+              <div class="str-buttons timeReveal4 load-hidden">
+                <h3 class="enText">02</h3>
+                <div class="hDivide"></div>
+                <p class="enText">The right place<br>自分の価値観に合った<br>+会社に就く</p>
+              </div>
+            </a>
+            <a href="#rightskill">
+              <div class="str-buttons timeReveal5 load-hidden">
+                <h3 class="enText">03</h3>
+                <div class="hDivide"></div>
+                <p class="enText">The right skills<br>教育制度で必要な知識や<br>技術を得られる</p>
+              </div>
+            </a>
+          </div>
+          <div class="str-image" data-aos="fade-right" data-aos-duration="1000"></div>
+        </div>
+        <h4 class="PConly work-tagline ">Choose your work</h4>
+        <div class="clearfix"></div>
+      </section>
+      <section class="right1 right-container bg-grey">
+        <div class="right1-head">
+          <a name="rightjob"></a>
+          <h2 >01</h2>
+          <h3 class="enText">The right job</h3>
+          <!-- <div class="clearfix"></div> -->
+          <h4>あなたの価値観に合う<br class="PConly clear" />仕事を見つける</h4>
+        </div>
+        <div class="jobtype-contain"
+        data-aos="fade-up" data-aos-duration="2000">
+          <div class="jobtypes">
+            <div>
+              <h3  class="enText">01</h3>
+              <h4>デザイナー</h4>
+            </div>
+            <img src="img/designer.png" alt="designer" />
+            <a class="trigger button enText" data-modal="modal1">READ MORE</a>
+          </div>
+          <div class="jobtypes">
+            <div>
+              <h3  class="enText">02</h3>
+              <h4>エンジニア</h4>
+            </div>
+            <img src="img/engineer.png" alt="engineer" />
+            <a class="trigger button enText" data-modal="modal2">READ MORE</a>
+          </div>
+          <div class="jobtypes">
+            <div>
+              <h3 class="enText">03</h3>
+              <h4>ディレクター</h4>
+            </div>
+
+            <img src="img/director.png" alt="director" />
+            <a class="trigger button enText" data-modal="modal3">READ MORE</a>
+          </div>
+        </div>
+
+        <!-- Modal for Designer -->
+
+        <div id="modal1" class="modal">
+          <div class="modal-overlay"></div>
+          <div class="modal-content">
+            <span class="close-button">×</span>
+ 
+
+            <div class="modalInner_LargeScreen">
+              <div class="modal-fixed">
+                <h2  ><span>01</span>デザイナー</h2>
+                <p class="career-type" >TYPE</p>
+                <label for="Content_WebDesgn" id="de-button1" ><div class="button">Webデザイナー</div></label>
+                <label for="Content_UIUDDesgn" id="de-button2"><div class="button">UXデザイナー</div></label>
+
+            </div>
+              <input type="radio" id="Content_WebDesgn" name="groupDesigner" checked="checked"/>
+              <input type="radio" id="Content_UIUDDesgn" name="groupDesigner" />
+              <div id="Content_WebDesgn timeReveal">
+                <img src="img/modal_de1_L.png" alt="ウェブデザイナーの写真" />
+                <h3 class="contentInner-heading">Webデザイナー</h3>
+                <p>
+                  Webデザイナーは、さまざまなWebサイトのデザインを行う仕事です。Webサイトの見栄えだけではなく、そのサイトの目的やコンセプトを考慮し、ユーザーにとって、どこに何があるか、分かりやすく使いやすいデザインの作成をすることがWebデザイナーに求められます。
+                  一般的に、Webディレクターを中心にプロジェクトチームを組み、他の業務を果たすスタッフと連携して1つのWebサイトを作成することになります。
+                </p>
+              </div>
+              <div id="Content_UIUDDesgn">
+                <img src="img/modal_de2_L.png" alt="UIUXデザイナーの写真" />
+
+                <h3 class="contentInner-heading">UI/UXデザイナー</h3>
+                <p>
+                  UI/UXデザイナーは、まだ新しい職種のため聞き慣れない方も多いでしょう。UIとはユーザー・インターフェースの略で、ユーザーがパソコン、スマートフォンなどを操作する際の表示や入力などを意味します。UIデザインでは、パソコンなどの画面で操作しやすい表示やデザインを考えます。
+                  一方、UXはユーザー・エクスペリエンスの略で、主にWeb上のサービスになどによって得られるユーザーの体験全般を指し、UXデザインでは、アプリケーションなどの使い心地のよさを追求して考えます。
+                </p>
+              </div>
+              <div id="designer_coreskill">
+                <h3 class="contentInner-heading">コアスキル</h3>
+                <p>
+                  レイアウト、タイポグラフィー、カラーから、Illustrator,
+                  Photoshopの活用などのデザイン作業を行なう事に必要な技術
+                </p>
+              </div>
+            </div>
+            <div class="modalInner_SmallScreen">
+                <h2><span>01</span>デザイナー</h2>
+            
+              <div class="careertypbox">
+                  <p class="career-type">TYPE</p>
+                  <div class="buttons-div">
+                       <a href="#WebDsgn" class="button">Webデザイナー</a>
+                <a href="#UDsgn" class="button">UI/UXデザイナー</a>
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="hDivide"></div>
+
+              <div class="modal-content-s des">
+                <div id="WebDsgn">
+                  <img src="img/sp/modal_de1.png" alt="ウェブデザイナーの写真" />
+                  <h3 class="contentInner-heading">Webデザイナー</h3>
+                  <p>
+                    Webデザイナーは、さまざまなWebサイトのデザインを行う仕事です。Webサイトの見栄えだけではなく、そのサイトの目的やコンセプトを考慮し、ユーザーにとって、どこに何があるか、分かりやすく使いやすいデザインの作成をすることがWebデザイナーに求められます。
+                    一般的に、Webディレクターを中心にプロジェクトチームを組み、他の業務を果たすスタッフと連携して1つのWebサイトを作成することになります。
+                  </p>
+                </div>
+                <div id="UDsgn">
+                  <img src="img/sp/modal_de2.png" alt="UIUXデザイナーの写真" />
+
+                  <h3 class="contentInner-heading">UI/UXデザイナー</h3>
+                  <p>
+                    UI/UXデザイナーは、まだ新しい職種のため聞き慣れない方も多いでしょう。UIとはユーザー・インターフェースの略で、ユーザーがパソコン、スマートフォンなどを操作する際の表示や入力などを意味します。UIデザインでは、パソコンなどの画面で操作しやすい表示やデザインを考えます。
+                    一方、UXはユーザー・エクスペリエンスの略で、主にWeb上のサービスになどによって得られるユーザーの体験全般を指し、UXデザインでは、アプリケーションなどの使い心地のよさを追求して考えます。
+                  </p>
+                </div>
+                <div id="designer_coreskill-small">
+                  <h3 class="contentInner-heading">コアスキル</h3>
+                  <p>
+                    レイアウト、タイポグラフィー、カラーから、Illustrator,
+                    Photoshopの活用などのデザイン作業を行なう事に必要な技術
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal for Engineer -->
+
+        <div id="modal2" class="modal">
+          <div class="modal-overlay"></div>
+          <div class="modal-content">
+            <span class="close-button">×</span>
+
+            <div class="modalInner_LargeScreen">
+                <div class="modal-fixed">
+                <h2><span>02</span>エンジニア</h2>
+                <p class="career-type">TYPE</p>
+                <label for="Content_Coder" id="en-button1"><div class="button">コーダー</div></label>
+                <label for="Content_Programmer" id="en-button2"><div class="button">プログラマー</div></label>
+                <label for="Content_FrontEnd" id="en-button3"><div class="button">フロントエンドエンジニア</div></label>
+
+              </div>
+              <input type="radio" id="Content_Coder" name="groupEngineer" checked="checked"/>
+              <input type="radio" id="Content_Programmer" name="groupEngineer" checked="checked"/>
+              <input type="radio" id="Content_FrontEnd" name="groupEngineer" />
+
+              <div id="Content_Coder">
+                <img src="img/modal_en1_L.png" alt="" />
+                <h3 class="contentInner-heading">コーダー</h3>
+                <p>
+                  コーダーは、WebデザイナーがデザインしたWebサイトが実際にインターネット上で見ることができるように、HTMLやCSS、JavaScriptといった言語を使用してコーディングすることが仕事です。コーダーは、依頼されたデザインを実現するためにマークアップ言語やスタイルシート言語を用いてコーディングを行います。
+                  Webデザイナーがコーダーを兼ねることも多くあります。
+                </p>
+              </div>
+              <div id="Content_Programmer">
+                <img src="img/modal_en2_L.png" alt="" />
+
+                <h3 class="contentInner-heading">プログラマー</h3>
+                <p>
+                  プログラマーは、PHPやPerlなどのプログラム言語を用い、動的に機能する部分を作成します。
+                  サイトの特性によってはプログラマがコーダーを兼ねたり、プログラムを書くこともあります。
+                </p>
+              </div>
+
+              <div id="Content_FrontEnd">
+                <img src="img/modal_en3_L.png" alt="" />
+
+                <h3 class="contentInner-heading">フロントエンド エンジニア</h3>
+                <p>
+                  フロントエンドエンジニアとは、Webアプリケーションなどでユーザーが画面越しに触れる部分の開発をする仕事です。フロンドエンドは画面に表示されるコンテンツで、フロントエンドエンジニアはデザイナーが設計したデザインを元にHTML、CSS、JavaScriptを駆使して、ブラウザに表示できるようにコーディングを実施します。現場によってはデザインやディレクションに関わることもありますので、幅広い活躍が期待されるポジションといえるでしょう。
+                </p>
+              </div>
+              <div id="engineer_coreskill">
+                <h3 class="contentInner-heading">コアスキル</h3>
+                <p>
+                  HTML・CSS・JavaScriptなどの言語が一般的に使用され、依頼通りのWebサイトを作成するためにこれらの言語の仕様に沿ってコードを書いていきます。
+                </p>
+              </div>
+            </div>
+            <div class="modalInner_SmallScreen">
+
+            <h2><span>02</span>エンジニア</h2>
+      
+            <div class="careertypbox">
+                <p class="career-type">TYPE</p>
+                <div class="buttons-div">
+                    <a href="#markUpEng" class="button">コーダー</a>
+                    <a href="#prgrmr" class="button">プログラマー</a>
+                    <a href="#frntEnd" class="button">フロントエンドエンジニア</a>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <div class="hDivide"></div>
+
+              <div class="modal-content-s eng">
+              <div id="markUpEng">
+                <img src="img/sp/modal_en1.png" alt="" />
+                <h3 class="contentInner-heading">コーダー</h3>
+                <p>
+                  コーダーは、WebデザイナーがデザインしたWebサイトが実際にインターネット上で見ることができるように、HTMLやCSS、JavaScriptといった言語を使用してコーディングすることが仕事です。コーダーは、依頼されたデザインを実現するためにマークアップ言語やスタイルシート言語を用いてコーディングを行います。
+                  Webデザイナーがコーダーを兼ねることも多くあります。
+                </p>
+              </div>
+              <div id="prgrmr">
+                <img src="img/sp/modal_en2.png" alt="" />
+
+                <h3 class="contentInner-heading">プログラマー</h3>
+                <p>
+                  プログラマーは、PHPやPerlなどのプログラム言語を用い、動的に機能する部分を作成します。
+                  サイトの特性によってはプログラマがコーダーを兼ねたり、プログラムを書くこともあります。
+                </p>
+              </div>
+              <div id="frntEnd">
+                <img src="img/sp/modal_en3.png" alt="" />
+
+                <h3 class="contentInner-heading">フロントエンド エンジニア</h3>
+                <p>
+                  フロントエンドエンジニアとは、Webアプリケーションなどでユーザーが画面越しに触れる部分の開発をする仕事です。フロンドエンドは画面に表示されるコンテンツで、フロントエンドエンジニアはデザイナーが設計したデザインを元にHTML、CSS、JavaScriptを駆使して、ブラウザに表示できるようにコーディングを実施します。現場によってはデザインやディレクションに関わることもありますので、幅広い活躍が期待されるポジションといえるでしょう。
+                </p>
+              </div>
+              <div id="engineer-coreskills-small">
+                <h3 class="contentInner-heading">コアスキル</h3>
+                <p>
+                  HTML・CSS・JavaScriptなどの言語が一般的に使用され、依頼通りのWebサイトを作成するためにこれらの言語の仕様に沿ってコードを書いていきます。
+                </p>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal for Director -->
+
+        <div id="modal3" class="modal">
+          <div class="modal-overlay"></div>
+          <div class="modal-content">
+            <span class="close-button">×</span>
+
+            <div class="modalInner_LargeScreen">
+                <div class="modal-fixed">
+                <h2 ><span>03</span>ディレクター</h2>
+                <p class="career-type">TYPE</p>
+                <label for="Content_Director" id="di-button"><div class="button">Webデザイナー</div></label>
+                </div>
+
+              <input type="radio"  id="Content_Director" name="groupDirector"  checked="checked"/>
+
+              <div id="Content_Director">
+                <img src="img/modal_di_L.png" alt="" />
+                <h3 class="contentInner-heading">Webディレクター</h3>
+                <p>
+                  Webディレクターとは、Web業界においてプロジェクトを監督・指揮・管理する人を指します。WebプログラマーやWebデザイナーなどのWeb制作に関わるスタッフ達をまとめ、クライアントの要望にかなったWebコンテンツを作り上げることが、Webディレクターに求められる役割です。プロジェクトの進行管理をはじめとするWebコンテンツ制作の責任者がWebディレクターといえます。
+                </p>
+
+                </div>
+
+                <div id="director_coreskill">
+                <h3 class="contentInner-heading">コアスキル</h3>
+                <p>
+                  コミュニケーションスキル、Webデザインの知識・スキル、プログラミングスキル
+                </p>
+              </div>
+            </div>
+            <div class="modalInner_SmallScreen">
+                <h2><span>03</span>ディレクター</h2>
+            
+              <div class="careertypbox">
+                  <p class="career-type">TYPE</p>
+                  <div class="buttons-div">
+                      <a href="#directorsmall" class="button">Webディレクター</a>
+                  </div>
+              </div>
+              <div class="clearfix"></div>
+              <div class="hDivide"></div>
+
+              <div class="modal-content-s dir">
+              <div id="directorsmall">
+                <img src="img/sp/modal_di.png" alt="" />
+                <h3 class="contentInner-heading">Webディレクター</h3>
+                <p>
+                  Webディレクターとは、Web業界においてプロジェクトを監督・指揮・管理する人を指します。WebプログラマーやWebデザイナーなどのWeb制作に関わるスタッフ達をまとめ、クライアントの要望にかなったWebコンテンツを作り上げることが、Webディレクターに求められる役割です。プロジェクトの進行管理をはじめとするWebコンテンツ制作の責任者がWebディレクターといえます。
+                </p>
+              </div>
+
+              <div id="director_coreskill-small">
+                <h3 class="contentInner-heading">コアスキル</h3>
+                <p>
+                  コミュニケーションスキル、Webデザインの知識・スキル、プログラミングスキル
+                </p>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="right2" data-aos="fade-left" data-aos-duration="2000">
+        <div class="right2-head">
+          <a name="rightplace"></a>
+          <h2>02</h2>
+          <h3  class="enText">The right place</h3>
+          <div class="clearfix"></div>
+          <h4>
+            WanWorkWebでは、<br />みんなとのつながりを<br />大切にしている
+          </h4>
+          <p>
+            WanWorkWebでは繋がりを大切にしたいので、あなたの個性、価値観に合う場所をマッチングするし、インターンシップ制度で実際に職場の環境、雰囲気、働き方を確かめることができる。無料研修・インターンシップでやりたい事とその場所を安心して見つけられる。
+          </p>
+          <h4 class="PConly work-tagline">The right place</h4>
+          <img src="" alt="" />
+        </div>
+      </section>
+
+      <section class="right3">
+        <div class="right3-head" data-aos="fade-right" data-aos-duration="2000">
+          <a name="rightskill"></a>
+          <h2>03</h2>
+          <h3 class="enText">The right skills</h3>
+          <div class="clearfix"></div>
+          <h4>クリエイターとしての<br />才能を目覚めさせよう</h4>
+          <p>
+            みんな最初は未経験。WanWorkWebの教育制度の充実さで成長できる。
+            クリエイターとしてやっていきたい向上心のある人を応援していく。
+          </p>
+          <img src="img/rightskills.png" class="PConly" alt="workplace" />
+          <h4 class="bg-text">Continuous learning</h4>
+        </div>
+        <div class="skill-container">
+          <div class="skillset timeReveal2" data-aos="fade-up" data-aos-duration="2000" >
+            <ul >
+              <li>
+                <h5>01 講習会</h5>
+                <div class="hDivide"></div>
+              
+                <p>未経験者でも必要な技術を身に着ける充実している教育制度を提供しています。</p>
+              </li>
+              <li>
+                <h5>02 セミナー</h5>
+                <div class="hDivide"></div>
+                <p>定期的に行われるセミナーでさらにスキルアップしていき、みんなで支え合います。</p>
+              </li>
+              <li>
+                <h5>03 無料研修制度</h5>
+                <div class="hDivide"></div>
+                <p>無料研修制度を参加することで、奇麗なオフィスやクリエイティブな人と出会い、就職前に安心して実際にどんな場所でどんな仕事をして行くか身で体験できます。</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <p class="skill-tagline timeReveal2">
+          就職しても終わらない、<br />ずっと応援していく。
+        </p>
+      </section>
+    </div>
+
+    <div class="lasttagline timeReveal2"><p>一緒にWebを<span>楽しもう</span>。</p></div>
+    <a href="#"><div class="totopArrow"></div></a>
+    
+
+    <footer>
+      <div class="page-section" id="4">
+        <section class="under-const">
+          <!-- <a name="work" class="page-section" id="4"></a> -->
+          <!-- WAN WORK WEB UNDER CONSTRUCTION -->
+
+          <img
+            src="img/underconst-pc.png"
+            alt="WAN WORK WEB 工事中"
+            class="PConly"
+          />
+          <img
+            src="img/sp/underconstr-sp.png"
+            alt="WAN WORK WEB 工事中"
+            class="SPonly"
+          />
+
+          <h2 class="SPonly">UNDER CONSTRUCTION</h2>
+        </section>
+        <section class="contentlinks">
+          <!-- particles.js container -->
+          <div id="particles-js"></div>
+
+          <div class="highlightWrap">
+              <h2>もっとWebをふれてみる</h2>
+              <p class="content-subh">月替わり配信中</p>
+          </div>
+          
+          <!-- <p class="content-subh">月替わり配信中</p> -->
+          <div class="banner b-int">
+            <img
+              src="img/interview-banner.png"
+              alt="interview-banner"
+              class="smallbanner"
+            />
+            <img
+              src="img/interview-banner-L.png"
+              alt="interview-banner"
+              class="largebanner"
+            />
+
+            <!-- <h3>INTERVIEW</h3> -->
+
+            <a href="content/designer-interview.html" class="contentpagelinks">
+              <p>
+                事務職の印刷物から<br />
+                ディジタルデザイナーへ
+              </p>
+              <p class="btn-righttxt">READ MORE</p>
+            </a>
+          </div>
+          <div class="banner b-taik">
+            <img
+              src="img/taiken-banner.png"
+              alt="taiken-banner"
+              class="smallbanner"
+            />
+            <img
+              src="img/taiken-banner-L.png"
+              alt="taiken-banner"
+              class="largebanner"
+            />
+            <!-- <h3>体験</h3> -->
+            <a href="content/coding-taiken.html" class="contentpagelinks">
+              <p>
+                CSSで絵を描く<br />
+                コーディングを体験
+              </p>
+              <p class="btn-righttxt">READ MORE</p>
+            </a>
+          </div>
+        </section>
+      </div>
+      <section class="mailmaga">
+        <div>
+            <h2>公開情報メルマガをやっています</h2>
+            <p>
+              WanWorkWebはまだ工事中です。後ほど公開いたします。
+              公開情報または月替わりコンテンツについて、定期的に提供しています。
+              メルマガ登録はこちらにメールアドレスを入力してください：
+            </p>
+            <div id="app"><form>
+              <input type="email" id="email-input" autocomplete="off" 
+              name="emailaddress" placeholder="メールアドレスを記入" ref="my_input">
+              <button id="submit" type ="submit" @click.prevent="getFormValues()"
+              v-on:click="isActive = !isActive"
+               data-modal="modal4" >登録する</button>
+
+           
+              
+               
+            </form>
+            <div class="invisible" v-bind:class="{ active: isActive }" >
+              {{ output }}
+          </div>
+       <!-- <template> -->
+    
+      
+      
+    
+            <!-- </template> -->
+        </div>
+       
+      </section>
+
+      <section class="bg_black">
+        <img src="img/logo-white.png" alt="Wan Work Web" id="footerLogo" />
+        <div class="share">
+          <p>SNSで共有:</p>
+          <img src="img/facebook-app-logo.png" alt="Facebook" />
+          <img src="img/twitter-logo.png" alt="Twitter" />
+          <img src="img/google-plus.png" alt="Google+" />
+          <img src="img/line.png" alt="Line" />
+        </div>
+        <p class="poweredby">
+          Powered by <img src="img/wan55logo-wh.png" alt="ワンゴジュウゴ" />
+        </p>
+        <p><small>Copyright © WanWorkWeb 2019. All Rights Reserved.</small></p>
+      </section>
+    </footer>
+    <script src="js/particles.js"></script>
+    <script src="js/app.js"></script>
+
+  </body>
+</html>

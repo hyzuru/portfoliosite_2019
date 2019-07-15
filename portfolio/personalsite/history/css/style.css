@@ -1,0 +1,91 @@
+@charset "UTF-8";
+
+body{
+	background-color: #FFFFFF;
+	width: 100%;
+	margin: 0 auto;
+	background: #000000;
+}
+
+
+main{
+	margin: 70px 0 70px 0;
+}
+h1, h2, p {
+	color: #FFFFFF;
+}
+
+
+
+/* =========custom scroll bar========= */
+/* width */
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #555; 
+}
+
+
+.timeline-toggle {
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	background: rgba(23, 66, 98, 0.65);
+	border: 0;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	color: rgba(255, 255, 255, 0.85);
+	cursor: pointer;
+	float: right;
+	font-size: 12px;
+	margin-right: 0;
+	padding: 10px 15px;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+.timeline-event-content .media {
+  float: right;
+  padding: 0 0 12px;
+  width: 300px;
+}
+.timeline-event-content .media img {
+  border: 2px solid #000;
+  margin: 0;
+}
+
+
+
+	.timeline-wrapper h2 {
+		font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+		text-transform: uppercase;
+		letter-spacing: 10px;
+	}
+	
+	.timeline-series dt a {
+		font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+		/* letter-spacing: 1px; */
+
+	}
+
+	.timeline-series dd h3 {
+		font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+		  font-size: 1.2em;
+			letter-spacing: 1px;
+	}
+	.timeline-event-content p {
+		font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+		/* letter-spacing: 1px; */
+	}
