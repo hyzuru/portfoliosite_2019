@@ -1,0 +1,741 @@
+@charset "UTF-8";
+
+body {
+  background-color: #ffffff;
+  width: 100%;
+  margin: 0 auto;
+  background: #000000;
+  margin-bottom: 60px;
+}
+
+/* top global nav bar is here */
+nav {
+  position: fixed;
+  /* left: 0; */
+  top: 0;
+  width: 100%;
+  background-color: #000000;
+  color: white;
+  text-align: left;
+  padding: 5px 0 5px 0;
+  z-index: 10;
+}
+
+nav ul li {
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  letter-spacing: 1px;
+  display: inline-block;
+  list-style-type: none;
+  padding: 0 10px 0;
+}
+nav ul li a {
+  padding: 5px;
+  color: #ffffff;
+  text-decoration: none;
+}
+nav ul li a:hover {
+  color: #ffffff;
+  background-color: #5e7d9b;
+}
+/* end of global nav css */
+
+/* this page's content starts here */
+
+.head {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* overflow: hidden; */
+}
+.flexslider > .slides > li > img {
+  width: 100%;
+  height: 100%;
+}
+.text {
+  position: relative;
+  top: -50px;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 69em;
+  text-align: left;
+}
+.text h2 {
+  letter-spacing: 0.4em;
+  font-size: 0.9em;
+  /* margin: 0; */
+  /* padding: 0; */
+  padding-left: 10px;
+  /* position: absolute; */
+}
+a:hover {
+  color: #5e7d9b;
+  /* color: rgb(159, 226, 253); */
+}
+h1 a {
+  position: absolute;
+  text-align: right;
+  left: 0;
+  bottom: 250px;
+  margin: 0;
+  /* height: 48px; */
+  width: 100%;
+  z-index: 10;
+  /* text-overflow: ellipsis; */
+  white-space: nowrap;
+  padding-right: 20px;
+  text-decoration: none;
+  color: #ffffff;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 26.4px;
+  letter-spacing: 12px;
+  font-size: 200%;
+}
+h1 a:hover {
+  color: #5e7d9b;
+  /* color: rgb(159, 226, 253); */
+}
+
+.blurb {
+  /* position: absolute; */
+  /* right: 5px; */
+  color: #ffffff;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  letter-spacing: 1.5px;
+
+  margin: 20px;
+  padding: 0;
+}
+h2 {
+  color: #ffffff;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 26.4px;
+  letter-spacing: 3px;
+  /* background-color: #5e7d9b81; */
+  margin: 20px;
+  padding: 2px 10px 2px 20px;
+  line-height: 5.5rem;
+}
+h2:hover {
+  /* background-color: #5e7d9b; */
+}
+
+.blurb ul li {
+  list-style-type: none;
+  color: #ffffff;
+  text-decoration: none;
+  line-height: 150%;
+}
+.blurb ul li a {
+  text-decoration: none;
+  color: #ffffff;
+}
+.blurb ul li span {
+  font-weight: bold;
+}
+.contact-nav li {
+  display: inline-block;
+  list-style-type: none;
+  color: #ffffff;
+  text-decoration: none;
+}
+.contact-nav li a {
+  padding: 5px;
+  text-decoration: none;
+  color: #ffffff;
+}
+.contact-nav li a:hover {
+  color: #ffffff;
+  background-color: #5e7d9b;
+}
+
+footer {
+  width: 100%;
+  background-color: #000000;
+  /* background: none; */
+  /* padding: 30px 0 ; */
+  position: fixed;
+  bottom: 0;
+  z-index: 10;
+  color: white;
+  text-align: center;
+}
+
+/* =========custom scroll bar========= */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* General styles for all menus */
+
+.cbp-spmenu {
+  background: #47a3da;
+  position: fixed;
+}
+
+.cbp-spmenu h3 {
+  color: #afdefa;
+  font-size: 1.9em;
+  padding: 20px;
+  margin: 0;
+  font-weight: 300;
+  background: #0d77b6;
+}
+
+.cbp-spmenu a {
+  display: block;
+  color: #fff;
+  font-size: 1.1em;
+  font-weight: 300;
+}
+
+.cbp-spmenu a:hover {
+  background: #258ecd;
+}
+
+.cbp-spmenu a:active {
+  background: #afdefa;
+  color: #47a3da;
+}
+
+/* Orientation-dependent styles for the content of the menu */
+
+.cbp-spmenu-vertical {
+  width: 240px;
+  height: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.cbp-spmenu-vertical a {
+  border-bottom: 1px solid #258ecd;
+  padding: 1em;
+}
+
+.cbp-spmenu-horizontal {
+  width: 100%;
+  height: 150px;
+  left: 0;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.cbp-spmenu-horizontal h3 {
+  height: 100%;
+  width: 20%;
+  float: left;
+}
+
+.cbp-spmenu-horizontal a {
+  float: left;
+  width: 20%;
+  padding: 0.8em;
+  border-left: 1px solid #258ecd;
+}
+
+/* Vertical menu that slides from the left or right */
+
+.cbp-spmenu-right {
+  right: -240px;
+}
+
+.cbp-spmenu-right.cbp-spmenu-open {
+  right: 0px;
+}
+
+/* Push classes applied to the body */
+
+.cbp-spmenu-push {
+  overflow-x: hidden;
+  position: relative;
+  left: 0;
+}
+
+.cbp-spmenu-push-toright {
+  left: 240px;
+}
+
+.cbp-spmenu-push-toleft {
+  left: -240px;
+}
+
+/* Transitions */
+
+.cbp-spmenu,
+.cbp-spmenu-push {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+/* Example media queries */
+
+@media screen and (max-width: 55.1875em) {
+  .cbp-spmenu-horizontal {
+    font-size: 75%;
+    height: 110px;
+  }
+
+  .cbp-spmenu-top {
+    top: -110px;
+  }
+
+  .cbp-spmenu-bottom {
+    bottom: -110px;
+  }
+}
+
+@media screen and (max-height: 26.375em) {
+  .cbp-spmenu-vertical {
+    font-size: 90%;
+    width: 190px;
+  }
+
+  .cbp-spmenu-left,
+  .cbp-spmenu-push-toleft {
+    left: -190px;
+  }
+
+  .cbp-spmenu-right {
+    right: -190px;
+  }
+
+  .cbp-spmenu-push-toright {
+    left: 190px;
+  }
+}
+div.main {
+  margin: 0;
+  padding: 0;
+}
+@media screen and (min-width: 1025px) {
+  header > div.main > section {
+    margin: 0;
+    width: 100%;
+    float: right;
+    padding: 0;
+  }
+}
+@media screen and (max-width: 1025px) {
+  header > div.main > section {
+    margin: 0 auto;
+    width: 100%;
+    padding: 0;
+  }
+}
+
+button#showRightPush {
+  border: none;
+  background: #47a3da;
+  color: #fff;
+  padding: 1.2em;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  margin: 10px 0;
+  font-size: 0.8em;
+  letter-spacing: 0.2em;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  /* font-size: 24px; */
+}
+
+section.resume {
+  width: 90%;
+  max-width: 69em;
+  margin: 0 auto;
+}
+section.resume p,
+section.resume ul,
+section.resume h3,
+section.resume h4 {
+  color: #ffffff;
+}
+
+/* page title */
+h1 {
+  /* position: fixed; */
+  text-align: left;
+  /* top: 12px; */
+  left: 10px;
+  margin: 0;
+  /* height: 48px; */
+  /* width: 100%; */
+  z-index: 10;
+  color: #ffffff;
+  white-space: nowrap;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 26.4px;
+  letter-spacing: 12px;
+  font-size: 200%;
+}
+
+.bg {
+  /* The image used */
+  background: url(../hobby/images/banner_live.jpg) no-repeat 50% 20px;
+  height: 50vh;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* position: relative; */
+  z-index: 100;
+}
+.wrapper {
+  /* display: grid; */
+  width: 100%;
+}
+
+aside {
+  padding: 10px 0;
+  width: 100%;
+  background-color: #ffffff;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  font-weight: 500;
+}
+
+aside > ul {
+  -webkit-padding-start: 0;
+  list-style: none;
+  margin: 15px;
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+aside > ul > li {
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+}
+
+aside > ul > li > a {
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  background: #000;
+  color: white;
+  height: 100%;
+  padding: 24px 0;
+  /* margin-bottom: 20px; */
+}
+aside > ul > li > a:hover {
+  text-align: center;
+  background: #5e7d9b;
+  color: #ffffff;
+}
+
+#main_contents {
+  margin: 0;
+}
+
+.foodphotos {
+  margin: 0 auto;
+  display: grid;
+  width: 80%;
+  height: 70vh;
+  grid-template-areas:
+    "food1 food2"
+    "food3 food4";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 10px;
+  grid-area: foodphotos;
+}
+
+.foodphotos p {
+  text-align: center;
+  margin: 10% auto;
+  font-size: 1.2em;
+  padding: 15px;
+  background-color: #00000040;
+  color: #ffffff;
+  transition: 0.3s;
+}
+.foodphotos p:hover {
+  text-align: center;
+  font-size: 1.2em;
+  padding: 15px;
+  background-color: #00000095;
+  font-weight: 500;
+}
+.foodphotos a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.food1 {
+  grid-area: food1;
+  background: url("../hobby/images/yakiniku.jpg") 100%;
+  background: contain;
+  background-size: 120% auto;
+}
+
+.food2 {
+  grid-area: food2;
+  background: url("../hobby/images/cheesecake.jpeg") 100% 60%;
+  background: cover;
+  background-size: 100% auto;
+}
+.food3 {
+  grid-area: food3;
+  background: url("../hobby/images/burger.jpg") 100%;
+  background: cover;
+  background-size: 150% auto;
+  background-position: 75% 75%;
+}
+.food4 {
+  grid-area: food4;
+  background: url("../hobby/images/coffee.jpg") 100% 50%;
+  background: contain;
+  background-size: 110% auto;
+  background-position: 100% 35%;
+}
+
+.foodtitle {
+  grid-area: foodtitle;
+  text-align: center;
+}
+#food h2 {
+  font-size: 2em;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  font-weight: 500;
+}
+#food {
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  color: #ffffff;
+  display: grid;
+  grid-template-areas:
+    "foodtitle"
+    "foodphotos";
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.12fr 1fr;
+  margin: 0 0 80px 0;
+}
+
+#food img {
+  margin: 0 auto;
+  padding: 0;
+  /* border:2px solid ; */
+}
+
+.band1 {
+  grid-area: band1;
+  background: url("../hobby/images/siam.jpg");
+  background: contain;
+  background-size: 100% auto;
+  background-position: 100% 35%;
+}
+.band2 {
+  grid-area: band2;
+  background: url("../hobby/images/diru.jpg");
+  background: cover;
+  background-size: 100% auto;
+  background-position: 50% 15%;
+}
+.band3 {
+  grid-area: band3;
+  background: url("../hobby/images/sid.jpg");
+  background: cover;
+  background-size: 100% auto;
+  background-position: 50% 30%;
+}
+.band4 {
+  grid-area: band4;
+  background: url("../hobby/images/oralcig.jpg");
+  background: cover;
+  background-size: 100% auto;
+  background-position: 50% 45%;
+}
+.band5 {
+  grid-area: band5;
+  background: url("../hobby/images/mucc.jpg");
+  background: cover;
+  background-size: auto 140%;
+  background-position: 50% 35%;
+}
+#music h2 {
+  font-size: 2em;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  font-weight: 500;
+
+  text-align: center;
+  grid-area: musictitle;
+  margin: 0;
+  padding: 20px 0;
+}
+#music {
+  background-color: #ffffff;
+  width: 100%;
+}
+#music .bands {
+  color: #000000;
+  display: grid;
+  grid-template-areas:
+    "band4 band3"
+    "band2 band2"
+    "band1 band5";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.7fr 1fr 0.6fr;
+  grid-gap: 10px;
+  width: 70%;
+  margin: 0 auto;
+  height: 100vh;
+  padding-bottom: 60px;
+}
+
+#live {
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+  overflow: hidden;
+}
+#live h2 {
+  font-size: 2em;
+  color: #ffffff;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  font-weight: 500;
+
+  text-align: center;
+}
+#live > .photos > .img {
+  object-position: 50%;
+  align-content: center;
+}
+#photography {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+}
+#photography h2 {
+  margin-top: -2px;
+  padding-top: 26px;
+  font-size: 2em;
+  color: #000000;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  font-weight: 500;
+  text-align: center;
+}
+#photography > .photos > img {
+  width: 100%;
+  height: 100%;
+}
+
+#Travel {
+  width: 100%;
+  background: url(../hobby/images/worldmap.jpg) 100% 75% no-repeat;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+}
+#Travel ul {
+  color: #ffffff;
+  background-color: #00000070;
+  list-style: none;
+  padding: 30px;
+  position: absolute;
+  top: 20%;
+  left: 45%;
+  margin: 0;
+  /* float: left; */
+}
+
+#Travel h2 {
+  font-size: 2em;
+  color: #ffffff;
+  background-color: #000000;
+  font-weight: 500;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  text-align: center;
+  margin: -4px;
+  padding: 20px 0;
+}
+p {
+  color: #ffffff;
+}
+
+/* =========custom scroll bar========= */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.pageTop {
+  position: fixed;
+  bottom: 60px;
+  right: 40px;
+  display: inline;
+  margin: 0;
+}
+.pageTop a {
+  display: block;
+  text-decoration: none;
+}
+.pageTop img {
+  background: #000;
+}
+.pageTop img:hover {
+  background: #333;
+}
+
+.waku {
+  display: grid;
+  width: 100%;
+  margin: 0 auto;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0.1em;
+}
+.waku img {
+  width: 100%;
+  height: auto;
+  margin: -2px 2px;
+}
+
+.flexslider > .slides > li > img {
+  width: 100%;
+  height: 100%;
+}
+#music h2 {
+  color: black;
+}

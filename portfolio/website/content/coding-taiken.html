@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="jp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Wan Work Web キャンペーンサイト | コーディング体験</title>
+    <link rel="stylesheet" type="text/css" href="../css/normalize.css" />
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css" rel="stylesheet" /> -->
+    <link rel="stylesheet" type="text/css" href="../css/bxslider.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/bxslider.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script> -->
+
+    <script src="../js/script-contents.js"></script>
+  </head>
+  <body class="pageType-taiken">
+    <!-- Navigation bar -->
+    <nav class="navBar">
+      <div class="wrapper PConly">
+        <a href="../index.html" class="logo"></a>
+
+        <input type="checkbox" id="menu-toggle" onclick="lockScroll();" />
+        <label for="menu-toggle" class="label-toggle"></label>
+        <ul>
+          <!-- <li>
+                <a href="../content/designer-interview.html" class="contentsPage">
+                  デザイナーインタビュー 
+                </a>
+            </li>
+            <li>
+                <a href="../content/coding-taiken.html" class="contentsPage">
+                  コーディング体験 
+                </a>
+            </li>         
+               <li>
+                <a href="../content/engineer-interview.html" class="contentsPage">
+                  エンジニアインタビュー
+                </a>
+            </li> -->
+          <li>
+            <a href="../content/designer-interview.html" class="contentsPage">
+              前回のコンテンツ
+            </a>
+          </li>
+
+          <li>
+            <a href="../index.html" class="contentsPage backtotop">
+              TOPへ戻る
+              <img src="../img/readmore-arrow.png" alt="→" class="PConly" />
+            </a>
+          </li>
+          <li></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="cont-keyvis">
+      <div class="txt-plc"><h1>コーディングを体験</h1></div>
+    </div>
+    <div class="cont-h2"><h2>EXPERIENCE</h2></div>
+
+    <a href="#article-main">
+      <div class="scrollbuttonbox">
+        <p class="clickDown">体験をスタート</p>
+        <p>Scroll</p>
+      </div>
+    </a>
+    <div class="c-scrolldown"><div class="c-line"></div></div>
+
+    <section class="taikenBody">
+      <a name="article-main" class="anchor-offset"></a>
+      <div class="col1">
+        <img src="../img/example.png" alt="コーディング体験の例" />
+      </div>
+      <div class="col2">
+        <div class="h-wrap"><h2>CSSで絵を描く方法</h2></div>
+        <p>
+          今月のコンテンツでCSSを使って絵を描く体験をします。最近はデザイナーがコーディング基礎を学ぶことが重要になってきています。一方、ベクターアートを描くことがレイアウト、色や形態の使い方を身につけることができるのでCSSで絵を描くことはデザイナーのみならずフロントエンドエンジニアにも有益です。
+        </p>
+      </div>
+      <div class="clearfix"></div>
+      <div class="h-wrap"><h2>コーディングを体験しましょう</h2></div>
+      <p>
+        では今回はコアラを描きます。下記の順番でテキストエディターに入力すると隣で結果が現れます。詳しく知りたい場合はエディターの下に開設しています。
+      </p>
+
+      <!-- INSTRUCTIONS -->
+
+      <div class="instructionSlider">
+        <div>
+          <h3><span>01</span>背色を付けて、キャンバスを用意する</h3>
+          <p>
+            下記の通りの文を打ち込むと、円が現れる。下記の通りの文を打ち込むと、円が現れる。コードの解説をする。
+          </p>
+          <pre><code>
+                body{
+                  background: #25A9FC;
+                }
+            </code></pre>
+        </div>
+        <div>
+          <p>
+            コアラの絵は透明な四角形体の上に描くので、この四角形体をHTMLのボディーの真ん中にする。コアラの頭はこの四角形体の中に配置される。
+          </p>
+          <pre>
+                    <code>
+                        .box{
+                          position: relative;
+                          margin: auto;
+                          display: block;
+                          margin-top: 8%;
+                          width: 600px;
+                          height: 420px;
+                          background: none;
+                        }
+                    </code>
+                  </pre>
+        </div>
+        <div>
+          <h3><span>02</span>頭を書く</h3>
+          <p>Webページの中に頭になる円形を描きます。</p>
+          <pre>
+        <code>
+            .head{
+              position: absolute;
+              top: 16.5%;
+              left: 25%;
+              width: 50%;
+              height: 67%;
+              background: #A6BECF;
+              border-radius: 50%;
+            }
+        </code>
+      </pre>
+        </div>
+        <div>
+          <p>
+            もう一つの円形を描こう。この円形は耳を頭のレイヤーの下から出ているように見えるために描く。このステップでは見た目が変わらない。
+          </p>
+
+          <pre><code>
+  .head-copy{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: #A6BECF;
+    border-radius: 50%;
+    z-index: 2;
+  }  
+</code></pre>
+        </div>
+        <div>
+          <h3><span>03</span>耳を描く</h3>
+          <p>
+            耳が2つの薄いグレーの大きい円形とちょっと濃いめグレーの小さい円形で作られ、頭の両側が一つずつある。
+          </p>
+
+          <pre><code>
+  .ear-left{
+    position: absolute;
+    width: 60%;
+    height: 65%;
+    left: -20%;
+    top: 5%;
+    background: #A6BECF;
+    border-radius: 50%;
+    z-index: 1;
+  }
+</code></pre>
+        </div>
+
+        <div>
+          <code>
+            <pre>
+      .ear-right{
+        position: absolute;
+        width: 60%;
+        height: 65%;
+        right: -20%;
+        top: 5%;
+        background: #A6BECF;
+        border-radius: 50%;
+        z-index: 1;
+      }
+  </pre
+            >
+          </code>
+        </div>
+        <div>
+          <code
+            ><pre>
+        .inner-ear{
+          position: absolute;
+          border-radius: 50%;
+          width: 80%;
+          height: 80%;
+          top: 10%;
+          left: 10%;
+          background: #819CAF;
+        }
+    </pre
+            ></code
+          >
+        </div>
+        <div>
+          <h3><span>04</span>目を描く</h3>
+          <p>
+            目の作り方も耳と似ている。二つの大きい白い円形と黒い瞳の小さい円形で作られている。
+          </p>
+          <pre><code>
+      .eye-left{
+        position: absolute;
+        background: white;
+        width: 30%;
+        height: 33%;
+        top: 25%;
+        left: 21%;
+        border-radius: 50%;
+        z-index: 3;
+      }</code></pre>
+        </div>
+        <div>
+          <pre><code>
+        .eye-right{
+          position: absolute;
+          background: white;
+          width: 30%;
+          height: 33%;
+          top: 25%;
+          right: 21%;
+          border-radius: 50%;
+          z-index: 2;
+        }
+    </code></pre>
+        </div>
+        <div>
+          <pre><code>
+      .pupil{
+        position: absolute;
+        width: 28%;
+        height: 30%;
+        top: 35%;
+        left: 36%;
+        border-radius: 50%;
+        background: #27354A;
+      }
+  </code></pre>
+        </div>
+
+        <div>
+          <h3><span>05</span>鼻を描く</h3>
+          <p>
+            鼻は頭の真ん中の少し下で配置する。z-index:4で目の上に置くことができる。鼻の形は最初に縦長の長方形を作り、そしてborder-radius:50pxで角を丸くさせる。
+          </p>
+          <pre><code>
+        .nose{
+          position: absolute;
+          background: #BE845F;
+          width: 25%;
+          height: 42.5%;
+          left: 37%;
+          top: 45%;
+          border-radius: 50px;
+          z-index: 4;
+        }
+    </code></pre>
+        </div>
+      </div>
+
+      <!-- INSTRUCTIONS END -->
+
+      <!-- <img src="../img/screenshoteditor.PNG" alt="editor" class="largerscreensonly">
+      <img src="../img/sp/screenshoteditor.PNG" alt="editor" class="SPonly"> -->
+
+      <iframe
+        src="https://codesandbox.io/embed/wz97ylnrkl"
+        style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+        sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+      ></iframe>
+
+      <a href="https://codesandbox.io/s/wz97ylnrkl">
+        <img
+          alt="Edit wz97ylnrkl"
+          src="https://codesandbox.io/static/img/play-codesandbox.svg"
+        />
+      </a>
+
+      <div class="mainTaiken">
+        <h2>コードを詳しく知ろう！</h2>
+
+        <h3><span>01</span>背色を付けて、キャンバスを用意する</h3>
+
+        <div class="left-col">
+          <p>
+            下記の通りの文を打ち込むと、円が現れる。下記の通りの文を打ち込むと、円が現れる。コードの解説をする。
+          </p>
+
+          <pre>
+      <code>
+          body{
+            background: #25A9FC;
+          }
+      </code>
+    </pre>
+
+          <p>
+            コアラの絵は透明な四角形体の上に描くので、この四角形体をHTMLのボディーの真ん中にする。コアラの頭はこの四角形体の中に配置される。
+          </p>
+
+          <pre>
+      <code>
+          .box{
+            position: relative;
+            margin: auto;
+            display: block;
+            margin-top: 8%;
+            width: 600px;
+            height: 420px;
+            background: none;
+          }
+      </code>
+    </pre>
+        </div>
+        <div class="right-col"><img src="../img/step1.png" alt="1" /></div>
+        <div class="clearfix"></div>
+        <div class="hDivide"></div>
+
+        <h3><span>02</span>頭を書く</h3>
+
+        <div class="left-col">
+          <p>Webページの中に頭になる円形を描きます。</p>
+          <pre>
+  <code>
+      .head{
+        position: absolute;
+        top: 16.5%;
+        left: 25%;
+        width: 50%;
+        height: 67%;
+        background: #A6BECF;
+        border-radius: 50%;
+      }
+  </code>
+</pre>
+
+          <p>
+            もう一つの円形を描こう。この円形は耳を頭のレイヤーの下から出ているように見えるために描く。このステップでは見た目が変わらない。
+          </p>
+
+          <pre><code>
+    .head-copy{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: #A6BECF;
+      border-radius: 50%;
+      z-index: 2;
+    }  
+</code></pre>
+        </div>
+        <div class="right-col"><img src="../img/step2.png" alt="2" /></div>
+        <div class="clearfix"></div>
+        <div class="hDivide"></div>
+        <h3><span>03</span>耳を描く</h3>
+        <div class="left-col">
+          <p>
+            耳が2つの薄いグレーの大きい円形とちょっと濃いめグレーの小さい円形で作られ、頭の両側が一つずつある。
+          </p>
+
+          <pre><code>
+    .ear-left{
+      position: absolute;
+      width: 60%;
+      height: 65%;
+      left: -20%;
+      top: 5%;
+      background: #A6BECF;
+      border-radius: 50%;
+      z-index: 1;
+    }
+    .ear-right{
+      position: absolute;
+      width: 60%;
+      height: 65%;
+      right: -20%;
+      top: 5%;
+      background: #A6BECF;
+      border-radius: 50%;
+      z-index: 1;
+    }
+    .inner-ear{
+      position: absolute;
+      border-radius: 50%;
+      width: 80%;
+      height: 80%;
+      top: 10%;
+      left: 10%;
+      background: #819CAF;
+    }
+</code></pre>
+        </div>
+        <div class="right-col">
+          <img src="../img/step3a.png" alt="3A" />
+          <img src="../img/step3b.png" alt="3B" />
+        </div>
+        <div class="clearfix"></div>
+        <div class="hDivide"></div>
+        <h3><span>04</span>目を描く</h3>
+        <div class="left-col">
+          <p>
+            目の作り方も耳と似ている。二つの大きい白い円形と黒い瞳の小さい円形で作られている。
+          </p>
+          <pre><code>
+      .eye-left{
+        position: absolute;
+        background: white;
+        width: 30%;
+        height: 33%;
+        top: 25%;
+        left: 21%;
+        border-radius: 50%;
+        z-index: 3;
+      }
+      .eye-right{
+        position: absolute;
+        background: white;
+        width: 30%;
+        height: 33%;
+        top: 25%;
+        right: 21%;
+        border-radius: 50%;
+        z-index: 2;
+      }
+      .pupil{
+        position: absolute;
+        width: 28%;
+        height: 30%;
+        top: 35%;
+        left: 36%;
+        border-radius: 50%;
+        background: #27354A;
+      }
+  </code></pre>
+        </div>
+
+        <div class="right-col"><img src="../img/step4.png" alt="4" /></div>
+        <div class="clearfix"></div>
+        <div class="hDivide"></div>
+        <h3><span>05</span>鼻を描く</h3>
+        <div class="left-col">
+          <p>
+            鼻は頭の真ん中の少し下で配置する。z-index:4で目の上に置くことができる。鼻の形は最初に縦長の長方形を作り、そしてborder-radius:50pxで角を丸くさせる。
+          </p>
+          <pre><code>
+        .nose{
+          position: absolute;
+          background: #BE845F;
+          width: 25%;
+          height: 42.5%;
+          left: 37%;
+          top: 45%;
+          border-radius: 50px;
+          z-index: 4;
+        }
+    </code></pre>
+        </div>
+
+        <div class="right-col"><img src="../img/step5.png" alt="5" /></div>
+        <div class="clearfix"></div>
+      </div>
+    </section>
+
+    <section class="prevContents">
+      <!-- particles.js container -->
+      <div id="particles-js"></div>
+
+      <div class="contDivide "></div>
+      <div class="highlightWrap">
+        <h3 class="highlight">以前の月替わりコンテンツ</h3>
+      </div>
+
+      <div class="cntContainer SPonly">
+        <div class=" contentpageslider cardContainer ">
+          <div>
+            <a href="../content/engineer-interview.html">
+              <img src="../img/cont3banner.png" alt="contentImage" />
+            </a>
+          </div>
+          <div>
+            <a href="../content/coding-taiken.html">
+              <img src="../img/cont2banner.png" alt="contentImage" />
+            </a>
+          </div>
+
+          <div>
+            <a href="../content/designer-interview.html">
+              <img src="../img/cont1banner.png" alt="contentImage" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="cardContainer larger">
+        <div>
+          <a href="../content/engineer-interview.html">
+            <img src="../img/cont3banner.png" alt="contentImage" />
+          </a>
+        </div>
+        <div>
+          <a href="../content/coding-taiken.html">
+            <img src="../img/cont2banner.png" alt="contentImage" />
+          </a>
+        </div>
+
+        <div>
+          <a href="../content/designer-interview.html">
+            <img src="../img/cont1banner.png" alt="contentImage" />
+          </a>
+        </div>
+      </div>
+    </section>
+    <a href="#"><div class="totopArrow"></div></a>
+    <footer>
+      <section class="under-const">
+        <a name="work"></a>
+        <!-- WAN WORK WEB UNDER CONSTRUCTION -->
+        <img
+          src="../img/underconst-pc.png"
+          alt="WAN WORK WEB 工事中"
+          class="PConly"
+        />
+        <img
+          src="../img/sp/underconstr-sp.png"
+          alt="WAN WORK WEB 工事中"
+          class="SPonly"
+        />
+        <h2>UNDER CONSTRUCTION</h2>
+      </section>
+      <section class="mailmaga">
+        <h2>公開情報メルマガをやっています</h2>
+        <p>
+          WanWorkWebはまだ工事中です。後ほど公開いたします。
+          公開情報または月替わりコンテンツについて、定期的に提供しています。
+          メルマガ登録はこちらにメールアドレスを入力してください：
+        </p>
+        <form>
+          <input
+            type="email"
+            name="emailaddress"
+            placeholder="メールアドレスを記入"
+          />
+          <button
+            id="submit"
+            type="submit"
+            @click.prevent="getFormValues()"
+            v-on:click="isActive = !isActive"
+            data-modal="modal4"
+          >
+            登録する
+          </button>
+        </form>
+      </section>
+
+      <section class="bg_black">
+        <img src="../img/logo-white.png" alt="Wan Work Web" id="footerLogo" />
+        <div class="share">
+          <p>SNSで共有:</p>
+          <img src="../img/facebook-app-logo.png" alt="Facebook" />
+          <img src="../img/twitter-logo.png" alt="Twitter" />
+          <img src="../img/google-plus.png" alt="Google+" />
+          <img src="../img/line.png" alt="Line" />
+        </div>
+        <p class="poweredby">
+          Powered by <img src="../img/wan55logo-wh.png" alt="ワンゴジュウゴ" />
+        </p>
+        <p><small>Copyright © WanWorkWeb 2019. All Rights Reserved.</small></p>
+      </section>
+    </footer>
+    <script src="../js/particles.js"></script>
+    <script src="../js/app.js"></script>
+  </body>
+</html>

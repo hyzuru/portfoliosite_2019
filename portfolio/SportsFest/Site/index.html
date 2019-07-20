@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>JEC Sports Festival 2018</title>
+<link rel="stylesheet" href="css/normalize.css" type="text/css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Josefin+Sans" />
+<!-- <link rel="stylesheet" href="css/drawer.min.css"> -->
+<link rel="stylesheet" href="css/style.css" type="text/css">
+
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<!-- <script type="text/javascript" src="js/jquery.min.js"></script> -->
+
+
+</head>
+
+<body class="home toppage  topscroller">
+
+<div id="bodywrapper" class="pageview">
+<header role="header banner">
+  <div class="inner clearfix" id="firstview">
+      <div class="fixednav"><a href="#"><div></div></a></div>
+
+      <a href="#" class="hum">
+        <span class="top"></span>
+        <span class="midle"></span>
+        <span class="bottom"></span>
+  
+      <!-- navigationbar -->
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="event/event.html">Event</a></li>
+          <li><a href="play/play.html">Play</a></li>
+          <li><a href="info/info.html">For Participants</a></li>
+          <li><a href="acknowledge/acknowledge.html">Special Thanks</a></li>
+          <li><a href="gallery/gallery.html">Gallery</a></li>
+        </ul>
+      </nav>
+    </a>
+
+    <!-- title page -->
+    <div class="pagetitlesquare">
+      <h1><span class="titlejec">JAPAN ELECTRONICS COLLEGE</span>
+        <!-- <span class="titleyear">2018</span> -->
+        <span class="titlespofes">Sports Festival</span></h1>
+      <p class="pagesubtitle"><span class="subtitle_date">2018.9.18</span><span class="subtitle_loc">Tokyo Dome</span></p>
+
+    </div><!-- <div class="pagetitlesquare"> -->
+  </div>	 <!-- <div id="inner clearfix"> -->
+
+  <div class="scrolltosecond"><a id="link" href="#secondview" onClick="ScrollTo()"><img src="img/scrolldown_small.png" alt="scroll to the second view"></a></div>
+  
+</header>
+</div>
+<a name="id3" class="secondpage"/></a>
+<main  id="secondview">
+ 
+  <section class="about">  <!-- About Sports Fest Section -->
+
+  <h3>第24回スポーツフェスティバル</h3>
+  <span ><img src="img/megaphoneicon@2x.png" alt="メガホンアイコン" class="section_icon"></span>
+<p>待ちに待ったスポーツフェスティバルは今年も東京ドームにて開催します！日本電子専門学校スポーツフェスティバルは、今年が第24回目を向かいます。</p>
+  
+</section>       <!-- <section class="about">  -->
+
+<section class="main_item digestvid">
+    
+    <div class="textbox">
+      <h3 class="item_text">去年のスポフェスの<br>ダイジェストを見よう！</h3>
+      <!-- <p class="btn">WATCH</p> -->
+      <button onclick="playPause()" class="btn" >WATCH</button> 
+      <!-- <img src="/img/thumbnail.png" alt="ダイジェスト映像を再生する"> -->    
+    </div>
+
+    <video id="digestvid" width="320" controls>
+        <source src="content/SPORT_FESTIVAL2017.mp4" type="video/mp4">
+        <!-- <source src="mov_bbb.ogg" type="video/ogg"> -->
+        Your browser does not support HTML5 video.
+      </video> 
+  
+  </section>
+
+
+
+
+  <section class="main_item eventshoukai">
+    <div class="textbox">
+      <h4 class="item_text">皆とスポーツを<br>楽しんで競って<br>一位になれますか？</h4>
+      <a href="event/event.html" class="btn">イベント紹介へ</a>
+    </div>
+    <div class="slider evitem">
+        <div class="evitem1"></div>
+        <div class="evitem2"></div>
+        <div class="evitem3"></div>
+      </div>
+  </section>
+
+  <section class="main_item photogal">
+    <div class="textbox">
+      <h4 class="item_text">友達のスポーツ姿など、<br>中々⾒れないことが<br>たくさんあるでしょう！</h4>
+      <!-- <p class="btn">フォトギャラリーへ！</p> -->
+      <a href="gallery/gallery.html" class="btn">フォトギャラリーへ！</a>
+
+  </div>
+    <!-- <img src="/img/kasou.png" alt="仮装で楽しんでいる学生の写真"> -->
+    <div class="slider evitem">
+        <div class="ksitem1"></div>
+        <div class="ksitem2"></div>
+        <div class="ksitem3"></div>
+      </div>
+  </section>
+
+  <section class="main_item play">
+      <div class="textbox">
+    <h4 class="item_text">出演する競技を<br>待っている間に、<br>
+    新しい発見や出会いを！</h4>
+    <!-- <p class="btn">PLAY</p> -->
+    <a href="play/play.html" class="btn">ビンゴチャレンジへ</a>
+  </div>
+    <img src="img/ouen.png" alt="仲間と応援している参加者の写真">
+  </section>
+
+  <section class="access" id="Access">  <!-- Access Section -->
+
+    <h3>アクセス</h3>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.8363752459904!2d139.74970261557098!3d35.70564393623949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c4782eed4f3%3A0x5058b288249e640e!2sTokyo+Dome!5e0!3m2!1sen!2sjp!4v1531444041609" width="100%" height="400vh" frameborder="0" style="border:0" allowfullscreen></iframe>
+  
+    <h4>最寄駅からの所要時間</h4>
+  <ul>
+    <li><h4>JR 中央線・総武線</h4><p>水道橋駅 | <span>西口から徒歩約5分<br>東口から徒歩約10分</span></p></li>
+    <li><h4>都営三田線</h4> <p>水道橋駅 | <span>A2出口から徒歩約5分</span></p></li>
+    <li><h4>東京メトロ丸の内線・南北線</h4><p>後楽園駅 | <span>2番出口から徒歩約2分</span></p></li>
+    <li><h4>都営大江戸線</h4><p>春日駅　 | <span>6番出口から徒歩約10分</span></p></li>
+  </ul>
+  
+  </section>       <!-- <section class="access">  -->
+  
+
+  <div class="clear_bottom"></div>
+
+</main>
+<footer>
+    <small>
+        <p>日本電子専門学校<br>スポーツフェスティバル2018</p>
+      <dl class="spofes-details">
+      <dt>開催期日</dt>
+      <dd>2018年9月18日（火）　</dd>
+      <dt>開会</dt>
+      <dd>10時00分</dd>
+      <dt>終了予定</dt>
+      <dd>16時00分</dd>
+      
+      <dt>開催場所</dt>
+      <dd>〒112-0004<br>東京都文京区後楽1-3-61<br>
+      </dd>
+
+      <dt>お問い合わせ</dt>
+      <dd>キャリアセンター直通電話<br>03-3369-2866</dd>
+    </dl>
+  </small>
+    <p><small class="copy">&copy; 2018 Japan Electronics College. All Rights Reserved. </small></p>
+    </footer>
+
+<div class="totop" id="pagetop">
+    <a href="#"><img src="img/totop_small.png" alt="return to page top"></a>
+  </div>
+</div><!-- bodywrapper -->
+
+
+<script type="text/javascript" src="js/script.js"></script>
+<script>    
+      var myVideo = document.getElementById("digestvid"); 
+
+      function playPause() { 
+          if (myVideo.paused) 
+              myVideo.play(); 
+          else 
+              myVideo.pause(); 
+      } 
+</script>
+
+</body>
+</html>
